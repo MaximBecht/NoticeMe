@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Pipes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using Windows.Storage;
@@ -25,8 +26,16 @@ namespace NoticeMe.Data
                     var serializer = new XmlSerializer(typeof(T));
                     using (Stream fileStream = await storageFile.OpenStreamForWriteAsync().ConfigureAwait(false))
                     {
+#if DEBUG
+                        using (var xmlWriter = XmlWriter.Create(fileStream, new XmlWriterSettings { Indent = true }))
+                        {
+                            serializer.Serialize(xmlWriter, objectToSave);
+                            return true;
+                        }
+#else
                         serializer.Serialize(fileStream, objectToSave);
                         return true;
+#endif
                     }
                 }
                 catch (Exception ex)

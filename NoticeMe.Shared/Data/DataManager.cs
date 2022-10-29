@@ -1,10 +1,7 @@
 ﻿using NoticeMe.Data.DataModels;
 using NoticeMe.Data.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,12 +9,18 @@ namespace NoticeMe.Data
 {
     public static class DataManager
     {
+        /// <summary>
+        /// Timespan between automatic saves of all application data (Settings[App + Device], User Account, Styling, ...).<br/><br/>
+        /// Unit: [min]
+        /// </summary>
+        private static int _autoSaveTimeSpan = 5; // ToDo: Add this parameter to something like a SettingsXML Data class for saving in seperate storage file.
+
         public static UserDataXML UserDataXML { get; set; }
 
         #region FileHandling
         public static async void InitAutoSaver()
         {
-            var timer = new PeriodicTimer(TimeSpan.FromSeconds(10));
+            var timer = new PeriodicTimer(TimeSpan.FromMinutes(_autoSaveTimeSpan));
 
             while (await timer.WaitForNextTickAsync())
             {
@@ -62,6 +65,7 @@ namespace NoticeMe.Data
         {
             UserDataXML = ToUserDataXML(userViewModels);
         }
+
         public static ObservableCollection<UserViewModel> GetUserDataAsUserVMCollection()
         {
             return ToUserViewModelCollection(UserDataXML);
