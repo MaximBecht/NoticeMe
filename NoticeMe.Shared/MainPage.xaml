@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="NoticeMe.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NoticeMe"
+    xmlns:vm="using:NoticeMe.Data.ViewModels"
+    xmlns:m="using:NoticeMe.Data.DataModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{x:Bind MainViewModel}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListView ItemsSource="{x:Bind MainViewModel.UserList, Mode=OneWay}" 
+                  SelectedItem="{x:Bind MainViewModel.SelectedUser, Mode=TwoWay}"
+                  DisplayMemberPath="FirstName"/>
+
+        <StackPanel Grid.Column="1" Style="{StaticResource GlobalStackPanelStyle}">
+            <PersonPicture Margin="0, 50, 0, 25" 
+                           DisplayName="{x:Bind MainViewModel.SelectedUser.DisplayName, Mode=OneWay}"/>
+
+            <TextBox Margin="0, 5, 0, 5"
+                     Header="First Name"
+                     Text="{x:Bind MainViewModel.SelectedUser.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="0, 5, 0, 5"
+                     Header="Last Name"
+                     Text="{x:Bind MainViewModel.SelectedUser.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Margin="0, 5, 0, 5"
+                    Content="Save"
+                    Style="{ThemeResource AccentButtonStyle}"
+                    HorizontalAlignment="Right"
+                    Click="{x:Bind MainViewModel.SaveUserData_ButtonClick}"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "NoticeMe.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
