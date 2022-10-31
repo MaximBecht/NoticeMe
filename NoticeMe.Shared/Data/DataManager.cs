@@ -68,7 +68,10 @@ namespace NoticeMe.Data
 
         public static ObservableCollection<UserViewModel> GetUserDataAsUserVMCollection()
         {
-            return ToUserViewModelCollection(UserDataXML);
+            if (UserDataXML != null)
+                return ToUserViewModelCollection(UserDataXML);
+            else
+                return null;
         }
         #endregion
 

@@ -11,6 +11,7 @@
   <Import Project="NoticeMe.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
   <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\HomePage.xaml" />
     <UpToDateCheckInput Remove="ResourceDictionary.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -19,8 +20,29 @@
     <_Globbed_Compile Remove="Data\ObjectSerializer.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
+    <_Globbed_Compile Remove="Pages\HomePage.xaml.cs" />
+    <_Globbed_Compile Remove="RestApi\RestApiTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <_Globbed_Content Remove="Assets\icons8_about_32px.png" />
+    <_Globbed_Content Remove="Assets\icons8_about_64px.png" />
+    <_Globbed_Content Remove="Assets\icons8_home_32px.png" />
+    <_Globbed_Content Remove="Assets\icons8_home_48px.png" />
+    <_Globbed_Content Remove="Assets\icons8_home_64px.png" />
+    <_Globbed_Content Remove="Assets\icons8_leaderboard_32px.png" />
+    <_Globbed_Content Remove="Assets\icons8_leaderboard_64px.png" />
+    <_Globbed_Content Remove="Assets\icons8_male_user_32px.png" />
+    <_Globbed_Content Remove="Assets\icons8_male_user_64px.png" />
+    <_Globbed_Content Remove="Assets\icons8_settings_32px.png" />
+    <_Globbed_Content Remove="Assets\icons8_settings_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icons8_home_48px.png" />
+    <_Globbed_Content Remove="Assets\Images\icons8_leaderboard_32px.png" />
+    <_Globbed_Content Remove="Assets\Images\icons8_male_user_32px.png" />
+    <_Globbed_Content Remove="Assets\Images\icons8_settings_32px.png" />
+    <_Globbed_Content Remove="Assets\xaml_binding_example.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <_Globbled_Page Remove="Pages\HomePage.xaml" />
     <_Globbled_Page Remove="ResourceDictionary.xaml" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,11 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:media="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <Style TargetType="StackPanel" x:Key="GlobalStackPanelStyle">
         <Setter Property="Margin" Value="10"/>
     </Style>
+
+    <media:AcrylicBrush x:Key="NoticeMe_AcrylicBackground" 
+            TintOpacity="0.2" TintLuminosityOpacity="0.5" TintColor="SkyBlue" FallbackColor="SkyBlue" />
 </ResourceDictionary>
