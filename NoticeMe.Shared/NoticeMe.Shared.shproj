@@ -37,8 +37,17 @@
     <_Globbed_Content Remove="Assets\icons8_settings_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icons8_home_48px.png" />
     <_Globbed_Content Remove="Assets\Images\icons8_leaderboard_32px.png" />
-    <_Globbed_Content Remove="Assets\Images\icons8_male_user_32px.png" />
     <_Globbed_Content Remove="Assets\Images\icons8_settings_32px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_about_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_account_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_home_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_leaderboard_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_settings_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_about_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_account_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_home_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_leaderboard_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_settings_64px.png" />
     <_Globbed_Content Remove="Assets\xaml_binding_example.txt" />
   </ItemGroup>
   <ItemGroup>

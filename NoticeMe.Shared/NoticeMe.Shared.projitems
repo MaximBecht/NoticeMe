@@ -57,10 +57,16 @@
 		 explicitly included in the projitem, so files can be added from vscode
 		 without manipulating the projitem file.
 	-->
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icons8_home_48px.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icons8_leaderboard_32px.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icons8_male_user_32px.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icons8_settings_32px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_about_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_account_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_home_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_leaderboard_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_settings_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_about_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_account_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_home_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_leaderboard_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_settings_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\xaml_binding_example.txt" />
     <_Globbled_Page Include="$(MSBuildThisFileDirectory)**/*.xaml" Exclude="@(Page);@(ApplicationDefinition)">
       <SubType>Designer</SubType>
@@ -75,7 +81,6 @@
     <_Globbed_PRIResource Include="$(MSBuildThisFileDirectory)**/*.resw" Exclude="@(PRIResource)" />
     <PRIResource Include="@(_Globbed_PRIResource)" />
     <_Globbed_Content Include="$(MSBuildThisFileDirectory)Assets/**/*.*" Exclude="@(Content)" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icons8_about_32px.png" />
     <!-- Mark the files from this folder as being part of WinUI -->
     <Page Update="$(MSBuildThisFileDirectory)**/*.xaml" XamlRuntime="WinUI" />
     <ApplicationDefinition Update="$(MSBuildThisFileDirectory)**/*.xaml" XamlRuntime="WinUI" />

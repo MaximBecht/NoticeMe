@@ -1,4 +1,5 @@
-﻿using Microsoft.UI.Xaml.Controls;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using NoticeMe.Data.ViewModels;
 using NoticeMe.Services.Particle;
 
@@ -27,6 +28,16 @@ namespace NoticeMe.Pages
         public async void TestRestApiButton()
         {
             await restApiTests.ProcessRepositories();
+        }
+
+        public static string CurrentTheme()
+        {
+            var isDark = Application.Current.RequestedTheme == ApplicationTheme.Dark;
+
+            if (isDark)
+                return "Dark";
+
+            return "Light";
         }
 
     }

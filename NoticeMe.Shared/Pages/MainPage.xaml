@@ -13,47 +13,73 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="56"/>
             <RowDefinition Height="*"/>
-            <RowDefinition MaxHeight="64"/>
+            <RowDefinition Height="56"/>
         </Grid.RowDefinitions>
 
-        <StackPanel x:Name="AppTopBar" VerticalAlignment="Bottom" FlowDirection="LeftToRight" Orientation="Horizontal">
-            <!--Top Bar, can later be used, if needed-->
-        </StackPanel>
+        <!--Top Bar, can later be used, if needed-->
+        <Grid x:Name="AppTopBar" Grid.Row="0" Background="#222831">
+            <Grid.ColumnDefinitions>
+                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="72, 16, 0, 0" FontSize="16" Foreground="#EEEEEE" Text="Home"/>
+        </Grid>
+
 
         <Frame Grid.Row="1" x:Name="ContentFrame"/>
 
-        <Rectangle  Grid.Row="2" Fill="#18181B" Opacity="0.5">
+        
+        <Grid x:Name="AppNavigationBar" 
+              Grid.Row="2" 
+              Background="#222831">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+            </Grid.RowDefinitions>
             
-        </Rectangle>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel x:Name="AppNavigationBar" 
-                    Grid.Row="2" 
-                    HorizontalAlignment="Center"
-                    FlowDirection="LeftToRight" 
-                    Orientation="Horizontal"
-                    CornerRadius="32"
-                    Height="56">
-
-            <Button Width="48" Height="48" Background="Transparent" BorderThickness="0" Margin="4, 0, 8, 0" CornerRadius="32">
-                <BitmapIcon Width="32" Height="32" UriSource="ms-appx:///Assets/Images/icons8_leaderboard_32px.png" Foreground="White"/>
+            <Button Grid.Column="0" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+                <StackPanel>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_leaderboard_64px.png" Foreground="#EEEEEE"/>
+                    <TextBlock FontSize="12" Foreground="#EEEEEE" Text="Scores" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
-            <Button  Width="48" Height="48" Background="Transparent" BorderThickness="0" Margin="8, 0, 8, 0" CornerRadius="32">
-                <BitmapIcon Width="32" Height="32" UriSource="ms-appx:///Assets/Images/icons8_male_user_32px.png" Foreground="White"/>
+            <Button Grid.Column="1" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+                <StackPanel>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_account_64px.png" Foreground="#EEEEEE"/>
+                    <TextBlock FontSize="12" Foreground="#EEEEEE" Text="Profile" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
-            <Button  Width="56" Height="56" Background="Transparent" BorderThickness="0" Margin="8, 0, 8, 0" CornerRadius="16">
-                <BitmapIcon Width="48" Height="48" UriSource="ms-appx:///Assets/Images/icons8_home_48px.png" Foreground="White"/>
+            <Button Grid.Column="2" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+                <StackPanel>
+                    <BitmapIcon Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="#00ADB5"/>
+                    <TextBlock FontSize="12" Foreground="#EEEEEE" Text="Home" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
-            <Button  Width="48" Height="48" Background="Transparent" BorderThickness="0" Margin="8, 0, 8, 0" CornerRadius="32">
-                <BitmapIcon Width="32" Height="32" UriSource="ms-appx:///Assets/Images/icons8_settings_32px.png" Foreground="White"/>
+            <Button Grid.Column="3" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+                <StackPanel>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_settings_64px.png" Foreground="#EEEEEE"/>
+                    <TextBlock FontSize="12" Foreground="#EEEEEE" Text="Settings" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
-            <Button  Width="48" Height="48" Background="Transparent" BorderThickness="0" Margin="8, 0, 4, 0" CornerRadius="32">
-                <BitmapIcon Width="32" Height="32" UriSource="ms-appx:///Assets/Images/icons8_about_32px.png" Foreground="White"/>
+            <Button Grid.Column="4" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+                <StackPanel>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_about_64px.png" Foreground="#EEEEEE"/>
+                    <TextBlock FontSize="12" Foreground="#EEEEEE" Text="About" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
-            <StackPanel.Background>
-                <SolidColorBrush Color="#6202EE" Opacity="1"/>
-            </StackPanel.Background>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Page>
