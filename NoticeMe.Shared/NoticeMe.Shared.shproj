@@ -12,6 +12,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
   <ItemGroup>
     <UpToDateCheckInput Remove="Pages\HomePage.xaml" />
+    <UpToDateCheckInput Remove="Pages\SettingsPage.xaml" />
     <UpToDateCheckInput Remove="ResourceDictionary.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +22,7 @@
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
     <_Globbed_Compile Remove="Pages\HomePage.xaml.cs" />
+    <_Globbed_Compile Remove="Pages\SettingsPage.xaml.cs" />
     <_Globbed_Compile Remove="RestApi\RestApiTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <_Globbled_Page Remove="Pages\HomePage.xaml" />
+    <_Globbled_Page Remove="Pages\SettingsPage.xaml" />
     <_Globbled_Page Remove="ResourceDictionary.xaml" />
   </ItemGroup>
 </Project>
