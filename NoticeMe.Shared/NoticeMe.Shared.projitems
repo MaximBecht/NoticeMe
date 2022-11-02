@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\UserData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ObjectSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ProfileViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\UserViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
@@ -42,6 +43,7 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\Particle\RestApiTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml">

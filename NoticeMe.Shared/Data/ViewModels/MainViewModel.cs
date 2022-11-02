@@ -1,4 +1,5 @@
-﻿using NoticeMe.Data.DataModels;
+﻿using Microsoft.UI.Xaml;
+using NoticeMe.Data.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -64,7 +65,7 @@ namespace NoticeMe.Data.ViewModels
             ActivePageTitle = title;
         }
 
-        public void SaveUserData_ButtonClick()
+        public void SaveUserData_ButtonClick(object sender, RoutedEventArgs e)
         {
             DataManager.SetUserData(UserList);
         }

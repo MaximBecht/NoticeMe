@@ -23,6 +23,7 @@
     <_Globbed_Compile Remove="Data\DataModels\UserData.cs" />
     <_Globbed_Compile Remove="Data\ObjectSerializer.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
+    <_Globbed_Compile Remove="Data\ViewModels\ProfileViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
     <_Globbed_Compile Remove="Pages\AboutPage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\HomePage.xaml.cs" />
@@ -30,6 +31,7 @@
     <_Globbed_Compile Remove="Pages\ScoreboardPage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\SettingsPage.xaml.cs" />
     <_Globbed_Compile Remove="RestApi\RestApiTests.cs" />
+    <_Globbed_Compile Remove="Tools\BooleanToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <_Globbed_Content Remove="Assets\icons8_about_32px.png" />
