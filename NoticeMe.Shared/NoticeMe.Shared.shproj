@@ -11,7 +11,10 @@
   <Import Project="NoticeMe.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
   <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\AboutPage.xaml" />
     <UpToDateCheckInput Remove="Pages\HomePage.xaml" />
+    <UpToDateCheckInput Remove="Pages\ProfilePage.xaml" />
+    <UpToDateCheckInput Remove="Pages\ScoreboardPage.xaml" />
     <UpToDateCheckInput Remove="Pages\SettingsPage.xaml" />
     <UpToDateCheckInput Remove="ResourceDictionary.xaml" />
   </ItemGroup>
@@ -21,7 +24,10 @@
     <_Globbed_Compile Remove="Data\ObjectSerializer.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
+    <_Globbed_Compile Remove="Pages\AboutPage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\HomePage.xaml.cs" />
+    <_Globbed_Compile Remove="Pages\ProfilePage.xaml.cs" />
+    <_Globbed_Compile Remove="Pages\ScoreboardPage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\SettingsPage.xaml.cs" />
     <_Globbed_Compile Remove="RestApi\RestApiTests.cs" />
   </ItemGroup>
@@ -53,7 +59,9 @@
     <_Globbed_Content Remove="Assets\xaml_binding_example.txt" />
   </ItemGroup>
   <ItemGroup>
+    <_Globbled_Page Remove="Pages\AboutPage.xaml" />
     <_Globbled_Page Remove="Pages\HomePage.xaml" />
+    <_Globbled_Page Remove="Pages\ProfilePage.xaml" />
     <_Globbled_Page Remove="Pages\SettingsPage.xaml" />
     <_Globbled_Page Remove="ResourceDictionary.xaml" />
   </ItemGroup>

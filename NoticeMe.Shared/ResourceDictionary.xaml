@@ -2,10 +2,19 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:media="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
-    <Style TargetType="StackPanel" x:Key="GlobalStackPanelStyle">
-        <Setter Property="Margin" Value="10"/>
-    </Style>
+    <!--Background Color Brushes-->
+    <SolidColorBrush x:Key="NoticeMe_PrimaryBackgroundColorBrush" Color="#393E46"/>
+    <SolidColorBrush x:Key="NoticeMe_SecondaryBackgroundColorBrush" Color="#222831"/>
 
-    <media:AcrylicBrush x:Key="NoticeMe_AcrylicBackground" 
-            TintOpacity="0.2" TintLuminosityOpacity="0.5" TintColor="SkyBlue" FallbackColor="SkyBlue" />
+    <!--Text Color Brushes-->
+    <SolidColorBrush x:Key="NoticeMe_SelectedTextColorBrush" Color="#00ADB5"/>
+    <SolidColorBrush x:Key="NoticeMe_NormalTextColorBrush" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="NoticeMe_DisabledTextColorBrush" Color="#AAAAAA"/>
+    
+    <!--Button Color Brushes-->
+    <SolidColorBrush x:Key="NoticeMe_DefaultTransparentButtonColorBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="NoticeMe_SelectedButtonIconColorBrush" Color="#00ADB5"/>
+    <SolidColorBrush x:Key="NoticeMe_NormalButtonIconColorBrush" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="NoticeMe_DisabledButtonIconColorBrush" Color="#AAAAAA"/>
+
 </ResourceDictionary>

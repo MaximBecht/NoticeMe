@@ -8,10 +8,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"    
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Background="{ThemeResource NoticeMe_PrimaryBackgroundColorBrush}"
     DataContext="{x:Bind MainViewModel}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="56"/>
             <RowDefinition Height="*"/>
@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <!--Top Bar, can later be used, if needed-->
-        <Grid x:Name="AppTopBar" Grid.Row="0" Background="#222831">
+        <Grid x:Name="AppTopBar" Grid.Row="0" Background="{ThemeResource NoticeMe_SecondaryBackgroundColorBrush}">
             <Grid.ColumnDefinitions>
                 
             </Grid.ColumnDefinitions>
@@ -27,22 +27,16 @@
                 
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="72, 16, 0, 0" FontSize="16" Foreground="#EEEEEE" Text="Home"/>
+            <TextBlock Margin="72, 16, 0, 0" FontSize="16" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}" Text="{x:Bind MainViewModel.ActivePageTitle, Mode=OneWay}"/>
         </Grid>
 
 
-        <Frame Grid.Row="1" x:Name="ContentFrame">
-            <Frame.ContentTransitions>
-                <TransitionCollection>
-                    <NavigationThemeTransition  />
-                </TransitionCollection>
-            </Frame.ContentTransitions>
-        </Frame>
+        <Frame Grid.Row="1" x:Name="ContentFrame"/>
 
 
         <Grid x:Name="AppNavigationBar" 
               Grid.Row="2" 
-              Background="#222831">
+              Background="{ThemeResource NoticeMe_SecondaryBackgroundColorBrush}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="56"/>
@@ -56,34 +50,34 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="NavigateLeaderBoardBtn" Click="NavigationButton_Click" Grid.Column="0" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+            <Button x:Name="NavigateScoreboardBtn" Click="NavigationButton_Click" Grid.Column="0" Background="{ThemeResource NoticeMe_DefaultTransparentButtonColorBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_leaderboard_64px.png" Foreground="#AAAAAA"/>
-                    <TextBlock FontSize="12" Foreground="#AAAAAA" Text="Scores" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_leaderboard_64px.png" Foreground="{ThemeResource NoticeMe_DisabledButtonIconColorBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_DisabledTextColorBrush}" Text="Scores" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="1" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+            <Button x:Name="NavigateProfileBtn" Click="NavigationButton_Click" Grid.Column="1" Background="{ThemeResource NoticeMe_DefaultTransparentButtonColorBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_account_64px.png" Foreground="#AAAAAA"/>
-                    <TextBlock FontSize="12" Foreground="#AAAAAA" Text="Profile" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_account_64px.png" Foreground="{ThemeResource NoticeMe_DisabledButtonIconColorBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_DisabledTextColorBrush}" Text="Profile" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="NavigateHomeBtn" Click="NavigationButton_Click" Grid.Column="2" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+            <Button x:Name="NavigateHomeBtn" Click="NavigationButton_Click" Grid.Column="2" Background="{ThemeResource NoticeMe_DefaultTransparentButtonColorBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="#00ADB5"/>
-                    <TextBlock FontSize="12" Foreground="#00ADB5" Text="Home" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_SelectedTextColorBrush}" Text="Home" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="NavigateSettingsBtn" Click="NavigationButton_Click" Grid.Column="3" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+            <Button x:Name="NavigateSettingsBtn" Click="NavigationButton_Click" Grid.Column="3" Background="{ThemeResource NoticeMe_DefaultTransparentButtonColorBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_settings_64px.png" Foreground="#AAAAAA"/>
-                    <TextBlock FontSize="12" Foreground="#AAAAAA" Text="Settings" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_settings_64px.png" Foreground="{ThemeResource NoticeMe_DisabledButtonIconColorBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_DisabledTextColorBrush}" Text="Settings" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="4" Background="Transparent" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
+            <Button x:Name="NavigateAboutBtn" Click="NavigationButton_Click" Grid.Column="4" Background="{ThemeResource NoticeMe_DefaultTransparentButtonColorBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_about_64px.png" Foreground="#AAAAAA"/>
-                    <TextBlock FontSize="12" Foreground="#AAAAAA" Text="About" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_about_64px.png" Foreground="{ThemeResource NoticeMe_DisabledButtonIconColorBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_DisabledTextColorBrush}" Text="About" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
         </Grid>

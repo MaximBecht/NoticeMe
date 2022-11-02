@@ -1,5 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media.Animation;
 using NoticeMe.Data.ViewModels;
 using NoticeMe.Services.Particle;
 
@@ -30,11 +31,25 @@ namespace NoticeMe.Pages
             Button b = sender as Button;
             switch (b.Name)
             {
-                case "NavigateLeaderBoardBtn": break;
-                case "NavigateHomeBtn": ContentFrame.Navigate(typeof(HomePage)); break;
-                case "NavigateSettingsBtn": ContentFrame.Navigate(typeof(SettingsPage)); break;
+                case "NavigateScoreboardBtn": 
+                    ContentFrame.Navigate(typeof(ScoreboardPage), null, new EntranceNavigationTransitionInfo());
+                    MainViewModel.ChangePageTitle("Scoreboard"); break;
+                case "NavigateProfileBtn": 
+                    ContentFrame.Navigate(typeof(ProfilePage), null, new EntranceNavigationTransitionInfo());
+                    MainViewModel.ChangePageTitle("Profile"); break;
+                case "NavigateHomeBtn": 
+                    ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
+                    MainViewModel.ChangePageTitle("Home"); break;
+                case "NavigateSettingsBtn": 
+                    ContentFrame.Navigate(typeof(SettingsPage), null, new EntranceNavigationTransitionInfo());
+                    MainViewModel.ChangePageTitle("Settings"); break;
+                case "NavigateAboutBtn": 
+                    ContentFrame.Navigate(typeof(AboutPage), null, new EntranceNavigationTransitionInfo());
+                    MainViewModel.ChangePageTitle("About"); break;
+                default: 
+                    ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
+                    MainViewModel.ChangePageTitle("Home"); break;
             }
-            //more logic to do here...
         }
 
 

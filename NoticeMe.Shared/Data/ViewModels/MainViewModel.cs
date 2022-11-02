@@ -17,6 +17,21 @@ namespace NoticeMe.Data.ViewModels
 {
     public partial class MainViewModel : INotifyPropertyChanged
     {
+        private string _activePageTitle = "Home";
+        public string ActivePageTitle 
+        {
+            get => _activePageTitle;
+            set 
+            {
+                if(_activePageTitle != value)
+                {
+                    _activePageTitle = value;
+                    OnPropertyChanged("ActivePageTitle");
+                }
+            }
+        }
+
+
         private UserViewModel _selectedUser;
 
         public ObservableCollection<UserViewModel> UserList { get; set; } = new();
@@ -42,6 +57,11 @@ namespace NoticeMe.Data.ViewModels
         public MainViewModel()
         {
             UserList = DataManager.GetUserDataAsUserVMCollection();
+        }
+
+        public void ChangePageTitle(string title)
+        {
+            ActivePageTitle = title;
         }
 
         public void SaveUserData_ButtonClick()
