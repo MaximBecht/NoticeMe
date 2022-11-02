@@ -14,67 +14,47 @@ namespace NoticeMe.Pages
     public sealed partial class MainPage : Page
     {
         public MainViewModel MainViewModel { get; } = new();
-        RestApiTests restApiTests;
+        //RestApiTests restApiTests;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            restApiTests = new RestApiTests();
-            restApiTests.CreateHttpClient();
+            //restApiTests = new RestApiTests();
+            //restApiTests.CreateHttpClient();
 
-            ContentFrame.Navigate(typeof(HomePage));
+            PageNavigator.Init(ContentFrame, MainViewModel);
+            PageNavigator.Navigate("Home", typeof(HomePage));
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)
         {
-            Button b = sender as Button;
-            switch (b.Name)
-            {
-                case "NavigateScoreboardBtn": 
-                    ContentFrame.Navigate(typeof(ScoreboardPage), null, new EntranceNavigationTransitionInfo());
-                    MainViewModel.ChangePageTitle("Scoreboard"); break;
-                case "NavigateProfileBtn": 
-                    ContentFrame.Navigate(typeof(ProfilePage), null, new EntranceNavigationTransitionInfo());
-                    MainViewModel.ChangePageTitle("Profile"); break;
-                case "NavigateHomeBtn": 
-                    ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
-                    MainViewModel.ChangePageTitle("Home"); break;
-                case "NavigateSettingsBtn": 
-                    ContentFrame.Navigate(typeof(SettingsPage), null, new EntranceNavigationTransitionInfo());
-                    MainViewModel.ChangePageTitle("Settings"); break;
-                case "NavigateAboutBtn": 
-                    ContentFrame.Navigate(typeof(AboutPage), null, new EntranceNavigationTransitionInfo());
-                    MainViewModel.ChangePageTitle("About"); break;
-                default: 
-                    ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
-                    MainViewModel.ChangePageTitle("Home"); break;
-            }
+            PageNavigator.NavigationButton_Click(sender, e);
         }
 
 
         /// <summary>
         /// Just for testing RestApi
         /// </summary>
-        public async void TestRestApiButton()
-        {
-            await restApiTests.ProcessRepositories();
-        }
+        //public async void TestRestApiButton()
+        //{
+        //    await restApiTests.ProcessRepositories();
+        //}
 
 
         /// <summary>
         /// Just as a reminder of possibilities
         /// </summary>
         /// <returns></returns>
-        public static string CurrentTheme()
-        {
-            var isDark = Application.Current.RequestedTheme == ApplicationTheme.Dark;
+        //public static string CurrentTheme()
+        //{
+        //    var isDark = Application.Current.RequestedTheme == ApplicationTheme.Dark;
 
-            if (isDark)
-                return "Dark";
+        //    if (isDark)
+        //        return "Dark";
 
-            return "Light";
-        }
+        //    return "Light";
+        //}
 
     }
 }

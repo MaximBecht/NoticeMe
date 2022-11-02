@@ -14,36 +14,16 @@
     </Page.Resources>
 
     <ScrollViewer HorizontalScrollBarVisibility="Auto" 
-                       VerticalScrollBarVisibility="Auto">
+                  VerticalScrollBarVisibility="Auto">
         <StackPanel>
-            <StackPanel Visibility="{x:Bind ProfileViewModel.IsEditProfilePopupOpen, Mode=OneWay, Converter={StaticResource BoolToVisibility}}"
-                    MaxWidth="600"
-                    MinWidth="200">
-                <TextBox Margin="0,5,0,5" PlaceholderText="Please enter user name" Text="{x:Bind ProfileViewModel.EditedUserName, Mode=TwoWay}"/>
-                <TextBox Margin="0,5,0,5" PlaceholderText="Please enter first name" Text="{x:Bind ProfileViewModel.EditedFirstName, Mode=TwoWay}"/>
-                <TextBox Margin="0,5,0,5" PlaceholderText="Please enter last name" Text="{x:Bind ProfileViewModel.EditedLastName, Mode=TwoWay}"/>
-                <TextBox Margin="0,5,0,5" PlaceholderText="Please enter email" Text="{x:Bind ProfileViewModel.EditedEmail, Mode=TwoWay}"/>
-                <Button Margin="0,5,0,5" Content="Change Profile Picture" Click="{x:Bind OpenFilePicker}" HorizontalAlignment="Center"/>
-
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="Save" Click="{x:Bind ProfileViewModel.Save_EditProfilePopup_ButtonClick}"/>
-                    <Button Content="Close" Click="{x:Bind ProfileViewModel.Close_EditProfilePopup_ButtonClick}"/>
-                </StackPanel>
-            </StackPanel>
-
             <PersonPicture Margin="0,50,0,0" Grid.Row="1" ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"/>
             <TextBlock Text="{x:Bind ProfileViewModel.UserName, Mode=TwoWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Text="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Text="{x:Bind ProfileViewModel.Email, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
 
-            <Button Content="Edit" Click="{x:Bind ProfileViewModel.Open_EditProfilePopup_ButtonClick}" HorizontalAlignment="Center"/>
+            <Button Content="Edit" Click="{x:Bind ProfileViewModel.OpenEditPageButton}" HorizontalAlignment="Center"/>
         </StackPanel>
     </ScrollViewer>
-
-    <!--<Grid.RowDefinitions>
-            <RowDefinition Height="400"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>-->
-
-        <!--{x:Bind ProfileViewModel.IsEditProfilePopupOpen, Mode=OneWay, Converter={StaticResource BoolToVisibility}}-->
+    
+    <!--{x:Bind ProfileViewModel.IsEditProfilePopupOpen, Mode=OneWay, Converter={StaticResource BoolToVisibility}}-->
 </Page>

@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="NoticeMe.Pages.EditProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NoticeMe.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="42"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            
+            <Button Grid.Row="0" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                    Height="32" Width="64"
+                    Background="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}"
+                    Click="{x:Bind ProfileViewModel.Close_EditProfilePage_ButtonClick}">
+                
+                <BitmapIcon UriSource="ms-appx:///Assets/Images/icon_material_left_64px.png" 
+                            Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Height="24" Width="24"/>
+            </Button>
+
+            
+            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <PersonPicture ProfilePicture="{x:Bind ProfileViewModel.EditedProfileImage, Mode=OneWay}" 
+                               Height="128" Width="128"/>
+
+                <Button Click="{x:Bind OpenFilePicker}" 
+                        HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                        Background="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}"
+                        Height="56" Width="56"
+                        CornerRadius="32">
+                    <BitmapIcon Height="24" Width="24" UriSource="ms-appx:///Assets/Images/icon_material_edit_64px.png" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                </Button>
+            </Grid>
+
+            <StackPanel Grid.Row="2" MaxWidth="600" MinWidth="200" VerticalAlignment="Center">
+                <TextBlock Text="Username" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedUserName, Mode=TwoWay}"/>
+
+                <TextBlock Text="First Name" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedFirstName, Mode=TwoWay}"/>
+
+                <TextBlock Text="Last Name" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedLastName, Mode=TwoWay}"/>
+
+                <TextBlock Text="Email" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedEmail, Mode=TwoWay}"/>
+
+                <TextBlock Text="Password" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                <PasswordBox Margin="0,1,0,40" MaxLength="16"/>
+                <!--Use this Event later: PasswordChanged="passwordBox_PasswordChanged"-->
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Content="Save" Click="{x:Bind ProfileViewModel.Save_EditProfilePage_ButtonClick}"/>
+                    <Button Content="Cancel" Click="{x:Bind ProfileViewModel.Close_EditProfilePage_ButtonClick}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

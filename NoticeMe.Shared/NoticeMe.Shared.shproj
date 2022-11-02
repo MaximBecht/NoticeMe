@@ -12,6 +12,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
   <ItemGroup>
     <UpToDateCheckInput Remove="Pages\AboutPage.xaml" />
+    <UpToDateCheckInput Remove="Pages\EditProfilePage.xaml" />
     <UpToDateCheckInput Remove="Pages\HomePage.xaml" />
     <UpToDateCheckInput Remove="Pages\ProfilePage.xaml" />
     <UpToDateCheckInput Remove="Pages\ScoreboardPage.xaml" />
@@ -25,7 +26,9 @@
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\ProfileViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
+    <_Globbed_Compile Remove="PageNavigator.cs" />
     <_Globbed_Compile Remove="Pages\AboutPage.xaml.cs" />
+    <_Globbed_Compile Remove="Pages\EditProfilePage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\HomePage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\ProfilePage.xaml.cs" />
     <_Globbed_Compile Remove="Pages\ScoreboardPage.xaml.cs" />
@@ -50,18 +53,24 @@
     <_Globbed_Content Remove="Assets\Images\icons8_settings_32px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_ios_about_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_ios_account_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_back_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_ios_home_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_ios_leaderboard_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_ios_left_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_ios_settings_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_about_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_account_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_back_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_edit_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_home_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_leaderboard_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_material_left_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_settings_64px.png" />
     <_Globbed_Content Remove="Assets\xaml_binding_example.txt" />
   </ItemGroup>
   <ItemGroup>
     <_Globbled_Page Remove="Pages\AboutPage.xaml" />
+    <_Globbled_Page Remove="Pages\EditProfilePage.xaml" />
     <_Globbled_Page Remove="Pages\HomePage.xaml" />
     <_Globbled_Page Remove="Pages\ProfilePage.xaml" />
     <_Globbled_Page Remove="Pages\SettingsPage.xaml" />

@@ -24,8 +24,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ProfileViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\UserViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageNavigator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -47,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\EditProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,13 +93,19 @@
 	-->
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_about_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_account_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_back_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_edit_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_home_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_leaderboard_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_left_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_ios_settings_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_about_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_account_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_back_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_edit_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_home_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_leaderboard_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_left_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_settings_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\xaml_binding_example.txt" />
     <_Globbled_Page Include="$(MSBuildThisFileDirectory)**/*.xaml" Exclude="@(Page);@(ApplicationDefinition)">

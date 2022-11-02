@@ -1,6 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
+using NoticeMe.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -200,7 +201,15 @@ namespace NoticeMe.Data.ViewModels
             }
         }
 
-        public void Open_EditProfilePopup_ButtonClick(object sender, RoutedEventArgs e)
+
+        public void OpenEditPageButton(object sender, RoutedEventArgs e)
+        {
+            PageNavigator.Navigate("Edit Profile", typeof(EditProfilePage));
+            InitEditPage();
+        }
+
+
+        public void InitEditPage()
         {
             if(!string.IsNullOrEmpty(_userName))
                 EditedUserName = UserName;
@@ -210,11 +219,9 @@ namespace NoticeMe.Data.ViewModels
 
             if (!string.IsNullOrEmpty(_email))
                 EditedEmail = Email;
-
-            IsEditProfilePopupOpen = true;
         }
 
-        public void Save_EditProfilePopup_ButtonClick(object sender, RoutedEventArgs e)
+        public void Save_EditProfilePage_ButtonClick(object sender, RoutedEventArgs e)
         {
             UserName = EditedUserName;
             FirstName = EditedFirstName;
@@ -224,12 +231,20 @@ namespace NoticeMe.Data.ViewModels
             if(EditedProfileImage != null)
                 ProfileImage = EditedProfileImage;
 
-            IsEditProfilePopupOpen = false;
+            CloseEditProfilePage();
         }
 
-        public void Close_EditProfilePopup_ButtonClick(object sender, RoutedEventArgs e)
+        public void Close_EditProfilePage_ButtonClick(object sender, RoutedEventArgs e)
         {
-            IsEditProfilePopupOpen = false;
+            CloseEditProfilePage();
+        }
+
+        private void CloseEditProfilePage()
+        {
+            if (PageNavigator.TryNavigateBack())
+            {
+                //Success
+            }
         }
 
 

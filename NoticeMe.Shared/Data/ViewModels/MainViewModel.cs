@@ -64,6 +64,10 @@ namespace NoticeMe.Data.ViewModels
         {
             ActivePageTitle = title;
         }
+        public string GetCurrentPageTitle()
+        {
+            return ActivePageTitle;
+        }
 
         public void SaveUserData_ButtonClick(object sender, RoutedEventArgs e)
         {
