@@ -22,7 +22,7 @@ namespace NoticeMe.Pages
             //restApiTests.CreateHttpClient();
 
             PageNavigator.Init(ContentFrame, MainViewModel);
-            PageNavigator.Navigate("Home", typeof(HomePage));
+            PageNavigator.Navigate("Home", typeof(HomePage), NavigateHomeBtn);
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)

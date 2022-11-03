@@ -232,9 +232,7 @@ namespace NoticeMe.Data.ViewModels
             FirstName = EditedFirstName;
             LastName = EditedLastName;
             Email = EditedEmail;
-            
-            if(EditedProfileImage != null)
-                ProfileImage = EditedProfileImage;
+            ProfileImage = EditedProfileImage;
 
             CloseEditProfilePage();
         }

@@ -28,7 +28,7 @@ namespace NoticeMe.Pages
         {
 #if WINDOWS
             //Get the Window's HWND (suboptimal solution to just create a new Window -> should close before application closes, otherwise theres some process still running in the background LULE)
-            var window = new Microsoft.UI.Xaml.Window(); // Normally should get current window of page or application, but is always null, even with dispatcher => Sadge, why so over complicated for something that simple, Microsoft?     nice suggestion btw -> var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this); PEPE Laugh
+            var window = new Microsoft.UI.Xaml.Window(); // Normally should get current window of page or application, but is always null, even with dispatcher => Sadge, why so over complicated for something that simple, Microsoft?     nice suggestion btw -> var hwnd = WinRT.InteWrop.indowNative.GetWindowHandle(this); PEPE Laugh
             var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
 
             // trying with "WinRT.Interop.WindowNative.GetWindowHandle(this)" in normal dispatcher may work? But i dont try that now, way to disappointed
@@ -61,6 +61,7 @@ namespace NoticeMe.Pages
             else
             {
                 // No file was picked or the dialog was cancelled.
+                ProfileViewModel.EditedProfileImage = null;
             }
 
 #if WINDOWS
