@@ -1,18 +1,10 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
-using Microsoft.UI.Xaml.Navigation;
 using NoticeMe.Data.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
-using Windows.Storage;
-using Windows.UI.Xaml;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
@@ -27,15 +19,9 @@ namespace NoticeMe.Pages
 
         public EditProfilePage()
         {
-            this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-
-            ProfileViewModel = (ProfileViewModel)e.Parameter;
+            ProfileViewModel = PageNavigator.ProfileViewModel;
             this.DataContext = ProfileViewModel;
+            this.InitializeComponent();
         }
 
         private async void OpenFilePicker()

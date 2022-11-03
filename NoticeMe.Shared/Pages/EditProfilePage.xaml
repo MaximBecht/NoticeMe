@@ -31,7 +31,8 @@
 
             
             <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <PersonPicture ProfilePicture="{x:Bind ProfileViewModel.EditedProfileImage, Mode=OneWay}" 
+                <PersonPicture ProfilePicture="{x:Bind ProfileViewModel.EditedProfileImage, Mode=OneWay}"
+                               DisplayName="{x:Bind ProfileViewModel.EditedDisplayName, Mode=OneWay}"
                                Height="128" Width="128"/>
 
                 <Button Click="{x:Bind OpenFilePicker}" 

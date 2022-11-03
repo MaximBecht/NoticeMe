@@ -1,19 +1,8 @@
 ﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
 using NoticeMe.Pages;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Storage;
-using Windows.Storage.Pickers;
-using Windows.Storage.Streams;
-
-
 
 namespace NoticeMe.Data.ViewModels
 {
@@ -25,7 +14,6 @@ namespace NoticeMe.Data.ViewModels
         private string _lastName;
         private string _email;
         private BitmapImage _profileImage;
-        private bool _isEditProfilePopupOpen = false;
 
         private string _editedUserName;
         private string _editedFirstName;
@@ -126,18 +114,6 @@ namespace NoticeMe.Data.ViewModels
                 }
             }
         }
-        public bool IsEditProfilePopupOpen
-        {
-            get => _isEditProfilePopupOpen;
-            set
-            {
-                if(_isEditProfilePopupOpen != value)
-                {
-                    _isEditProfilePopupOpen = value;
-                    OnPropertyChanged("IsEditProfilePopupOpen");
-                }
-            }
-        }
 
         // ToDo: String control REGEX for email formating check and min length for Names and Passwords(+ are numbers and symbols in password? -> dont allow otherwise and show message)
         public string EditedUserName
@@ -161,6 +137,7 @@ namespace NoticeMe.Data.ViewModels
                 {
                     _editedFirstName = value;
                     OnPropertyChanged("EditedFirstName");
+                    OnPropertyChanged("EditedDisplayName");
                 }
             }
         }
@@ -173,7 +150,17 @@ namespace NoticeMe.Data.ViewModels
                 {
                     _editedLastName = value;
                     OnPropertyChanged("EditedLastName");
+                    OnPropertyChanged("EditedDisplayName");
                 }
+            }
+        }
+        public string EditedDisplayName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(EditedFirstName) || string.IsNullOrEmpty(EditedLastName))
+                    return "Name name not set";
+                return EditedFirstName + " " + EditedLastName;
             }
         }
         public string EditedEmail
@@ -208,6 +195,22 @@ namespace NoticeMe.Data.ViewModels
             InitEditPage();
         }
 
+        //public void ForceUpdate()
+        //{
+        //    OnPropertyChanged("UserName");
+        //    OnPropertyChanged("FirstName");
+        //    OnPropertyChanged("LastName");
+        //    OnPropertyChanged("DisplayName");
+        //    OnPropertyChanged("Email");
+        //    OnPropertyChanged("ProfileImage");
+
+        //    OnPropertyChanged("EditedUserName");
+        //    OnPropertyChanged("EditedFirstName");
+        //    OnPropertyChanged("EditedLastName");
+        //    OnPropertyChanged("EditedDisplayName");
+        //    OnPropertyChanged("EditedEmail");
+        //    OnPropertyChanged("EditedProfileImage");
+        //}
 
         public void InitEditPage()
         {
@@ -219,6 +222,8 @@ namespace NoticeMe.Data.ViewModels
 
             if (!string.IsNullOrEmpty(_email))
                 EditedEmail = Email;
+
+            EditedProfileImage = ProfileImage;
         }
 
         public void Save_EditProfilePage_ButtonClick(object sender, RoutedEventArgs e)

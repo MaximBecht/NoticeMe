@@ -15,12 +15,14 @@ namespace NoticeMe
 
         private static string _lastTitle;
 
+        public static ProfileViewModel ProfileViewModel { get => _profileViewModel; set => _profileViewModel = value; }
+
         public static void Init(Frame contentFrame, MainViewModel mainViewModel)
         {
             _contentFrame = contentFrame;
             _mainViewModel = mainViewModel;
 
-            _profileViewModel = new ProfileViewModel();
+            ProfileViewModel = new ProfileViewModel();
         }
 
         public static void NavigationButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +37,7 @@ namespace NoticeMe
                     _contentFrame.Navigate(typeof(ScoreboardPage), null, new EntranceNavigationTransitionInfo());
                     _mainViewModel.ChangePageTitle("Scoreboard"); break;
                 case "NavigateProfileBtn":
-                    _contentFrame.Navigate(typeof(ProfilePage), _profileViewModel, new EntranceNavigationTransitionInfo());
+                    _contentFrame.Navigate(typeof(ProfilePage), ProfileViewModel, new EntranceNavigationTransitionInfo());
                     _mainViewModel.ChangePageTitle("Profile"); break;
                 case "NavigateHomeBtn":
                     _contentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
@@ -69,7 +71,7 @@ namespace NoticeMe
             {
                 case "Home": return _mainViewModel;
                 case "Profile":
-                case "Edit Profile": return _profileViewModel;
+                case "Edit Profile": return ProfileViewModel;
                 default: return null;
             }
         }

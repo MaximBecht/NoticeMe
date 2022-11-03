@@ -98,8 +98,9 @@
             <SolidColorBrush x:Key="CircleStroke" Color="{StaticResource SystemColorHighlightTextColor}"/>
         </ResourceDictionary>-->
     </ResourceDictionary.ThemeDictionaries>
-    <ResourceDictionary x:Key="CustomControlStyles">
-        <!--  THIS IS FROM generic.xaml  -->
+    
+    <!--<ResourceDictionary x:Key="CustomControlStyles">
+        --><!--  THIS IS FROM generic.xaml  --><!--
         <Style x:Key="NoticeMe_CustomTextBox" TargetType="TextBox">
             <Setter Property="Foreground" Value="{ThemeResource TextControlForeground}" />
             <Setter Property="Background" Value="{ThemeResource TextControlBackground}" />
@@ -117,8 +118,8 @@
             <Setter Property="UseSystemFocusVisuals" Value="{ThemeResource IsApplicationFocusVisualKindReveal}" />
             <Setter Property="ContextFlyout" Value="{StaticResource TextControlCommandBarContextFlyout}" />
             <Setter Property="SelectionFlyout" Value="{StaticResource TextControlCommandBarSelectionFlyout}" />
-            <!--  Please uncomment below line if you want to enable InputValidation APIs for TextBox/ PasswordBox in Pre-Release builds  -->
-            <!-- <Setter Property="ErrorTemplate" Value="{StaticResource DefaultInputValidationErrorTemplate}" /> -->
+            --><!--  Please uncomment below line if you want to enable InputValidation APIs for TextBox/ PasswordBox in Pre-Release builds  -->
+            <!-- <Setter Property="ErrorTemplate" Value="{StaticResource DefaultInputValidationErrorTemplate}" /> --><!--
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
@@ -348,7 +349,7 @@
                                         </Storyboard>
                                     </VisualState>
 
-                                    <!--  THIS IS WHAT YOU WANT TO CUSTOMIZE  -->
+                                    --><!--  THIS IS WHAT YOU WANT TO CUSTOMIZE  --><!--
                                     <VisualState x:Name="Focused">
 
                                         <Storyboard>
@@ -425,5 +426,5 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    </ResourceDictionary>
+    </ResourceDictionary>-->
 </ResourceDictionary>

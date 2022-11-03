@@ -16,8 +16,10 @@
     <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                   VerticalScrollBarVisibility="Auto">
         <StackPanel>
-            <PersonPicture Margin="0,50,0,0" Grid.Row="1" ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"/>
-            <TextBlock Text="{x:Bind ProfileViewModel.UserName, Mode=TwoWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <PersonPicture Grid.Row="1" Margin="0,50,0,0"
+                           DisplayName="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}"
+                           ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"/>
+            <TextBlock Text="{x:Bind ProfileViewModel.UserName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Text="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Text="{x:Bind ProfileViewModel.Email, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
 
