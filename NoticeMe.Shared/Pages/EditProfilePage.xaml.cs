@@ -6,13 +6,8 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 
-// Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
 namespace NoticeMe.Pages
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class EditProfilePage : Page
     {
         public ProfileViewModel ProfileViewModel;
@@ -26,6 +21,13 @@ namespace NoticeMe.Pages
 
         private async void OpenFilePicker()
         {
+#if ANDROID
+            //OpenFilePickerAndroid();
+#endif
+
+
+
+
 #if WINDOWS
             //Get the Window's HWND (suboptimal solution to just create a new Window -> should close before application closes, otherwise theres some process still running in the background LULE)
             var window = new Microsoft.UI.Xaml.Window(); // Normally should get current window of page or application, but is always null, even with dispatcher => Sadge, why so over complicated for something that simple, Microsoft?     nice suggestion btw -> var hwnd = WinRT.InteWrop.indowNative.GetWindowHandle(this); PEPE Laugh
@@ -55,12 +57,15 @@ namespace NoticeMe.Pages
                     BitmapImage bitmapImage = new BitmapImage();
                     await bitmapImage.SetSourceAsync(fileStream);
 
+                    ProfileViewModel.EditedProfileImageSourceFile = pickedFile;
                     ProfileViewModel.EditedProfileImage = bitmapImage;
                 }
             }
             else
             {
                 // No file was picked or the dialog was cancelled.
+                // await ProfileViewModel.DeleteProfileImageAsync();
+                ProfileViewModel.EditedProfileImageSourceFile = null;
                 ProfileViewModel.EditedProfileImage = null;
             }
 
@@ -68,5 +73,25 @@ namespace NoticeMe.Pages
             window.Close();
 #endif
         }
+
+
+        //private async void OpenFilePickerAndroid()
+        //{
+        //    if (MediaPicker.Default.IsCaptureSupported)
+        //    {
+        //        FileResult photo = await MediaPicker.Default.CapturePhotoAsync();
+
+        //        if (photo != null)
+        //        {
+        //            // save the file into local storage
+        //            string localFilePath = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
+
+        //            using Stream sourceStream = await photo.OpenReadAsync();
+        //            using FileStream localFileStream = File.OpenWrite(localFilePath);
+
+        //            await sourceStream.CopyToAsync(localFileStream);
+        //        }
+        //    }
+        //}
     }
 }

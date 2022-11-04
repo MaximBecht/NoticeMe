@@ -16,16 +16,25 @@
     <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                   VerticalScrollBarVisibility="Auto">
         <StackPanel>
-            <PersonPicture Grid.Row="1" Margin="0,50,0,0"
+            <PersonPicture Margin="0,50,0,0" Width="160" Height="160"
                            DisplayName="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}"
                            ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"/>
-            <TextBlock Text="{x:Bind ProfileViewModel.UserName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Text="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Text="{x:Bind ProfileViewModel.Email, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Margin="0,5,0,5" Text="{x:Bind ProfileViewModel.UserName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Margin="0,5,0,5" Text="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Margin="0,5,0,40" Text="{x:Bind ProfileViewModel.Email, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
 
-            <Button Content="Edit" Click="{x:Bind ProfileViewModel.OpenEditPageButton}" HorizontalAlignment="Center"/>
+
+            <Button Click="{x:Bind ProfileViewModel.OpenEditPageButton}" 
+                    HorizontalAlignment="Center" Margin="0,0,0,10"
+                    Background="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}">
+                <StackPanel>
+                    <BitmapIcon UriSource="ms-appx:///Assets/Images/icon_material_edit_64px.png" 
+                            Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Height="24" Width="24"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}" Text="Edit Profile" HorizontalAlignment="Center" Margin="0,2,0,5"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
     </ScrollViewer>
-    
-    <!--{x:Bind ProfileViewModel.IsEditProfilePopupOpen, Mode=OneWay, Converter={StaticResource BoolToVisibility}}-->
 </Page>

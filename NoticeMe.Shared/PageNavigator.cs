@@ -79,7 +79,7 @@ namespace NoticeMe
         private static void SetButtonVisualState(Button b)
         {
             List<BitmapIcon> icon = new List<BitmapIcon>();
-            List<TextBlock> text = new List<TextBlock>();   
+            List<TextBlock> text = new List<TextBlock>();
             FindChildren<BitmapIcon>(icon, b);
             FindChildren<TextBlock>(text, b);
 

@@ -1,8 +1,13 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media.Imaging;
 using NoticeMe.Pages;
+using System;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.Storage.Streams;
 
 namespace NoticeMe.Data.ViewModels
 {
@@ -81,7 +86,7 @@ namespace NoticeMe.Data.ViewModels
             get
             {
                 if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))
-                    return "Name name not set";
+                    return "Name not set";
                 return FirstName + " " + LastName;
             }
         }
@@ -102,8 +107,8 @@ namespace NoticeMe.Data.ViewModels
                 }
             }
         }
-        public BitmapImage ProfileImage 
-        { 
+        public BitmapImage ProfileImage
+        {
             get => _profileImage;
             set
             {
@@ -111,6 +116,11 @@ namespace NoticeMe.Data.ViewModels
                 {
                     _profileImage = value;
                     OnPropertyChanged("ProfileImage");
+
+                    if (EditedProfileImageSourceFile != null)
+                    {
+                        SaveProfileImage(EditedProfileImageSourceFile);
+                    }
                 }
             }
         }
@@ -118,7 +128,7 @@ namespace NoticeMe.Data.ViewModels
         // ToDo: String control REGEX for email formating check and min length for Names and Passwords(+ are numbers and symbols in password? -> dont allow otherwise and show message)
         public string EditedUserName
         {
-            get => _editedUserName; 
+            get => _editedUserName;
             set
             {
                 if (_editedUserName != value)
@@ -187,7 +197,13 @@ namespace NoticeMe.Data.ViewModels
                 }
             }
         }
+        public StorageFile EditedProfileImageSourceFile;
 
+
+        public ProfileViewModel()
+        {
+            LoadProfileImage();
+        }
 
         public void OpenEditPageButton(object sender, RoutedEventArgs e)
         {
@@ -195,26 +211,9 @@ namespace NoticeMe.Data.ViewModels
             InitEditPage();
         }
 
-        //public void ForceUpdate()
-        //{
-        //    OnPropertyChanged("UserName");
-        //    OnPropertyChanged("FirstName");
-        //    OnPropertyChanged("LastName");
-        //    OnPropertyChanged("DisplayName");
-        //    OnPropertyChanged("Email");
-        //    OnPropertyChanged("ProfileImage");
-
-        //    OnPropertyChanged("EditedUserName");
-        //    OnPropertyChanged("EditedFirstName");
-        //    OnPropertyChanged("EditedLastName");
-        //    OnPropertyChanged("EditedDisplayName");
-        //    OnPropertyChanged("EditedEmail");
-        //    OnPropertyChanged("EditedProfileImage");
-        //}
-
         public void InitEditPage()
         {
-            if(!string.IsNullOrEmpty(_userName))
+            if (!string.IsNullOrEmpty(_userName))
                 EditedUserName = UserName;
 
             EditedFirstName = FirstName;
@@ -223,6 +222,7 @@ namespace NoticeMe.Data.ViewModels
             if (!string.IsNullOrEmpty(_email))
                 EditedEmail = Email;
 
+            EditedProfileImageSourceFile = null;
             EditedProfileImage = ProfileImage;
         }
 
@@ -232,6 +232,7 @@ namespace NoticeMe.Data.ViewModels
             FirstName = EditedFirstName;
             LastName = EditedLastName;
             Email = EditedEmail;
+
             ProfileImage = EditedProfileImage;
 
             CloseEditProfilePage();
@@ -246,54 +247,72 @@ namespace NoticeMe.Data.ViewModels
         {
             if (PageNavigator.TryNavigateBack())
             {
-                //Success
+
             }
         }
 
+        private async void SaveProfileImage(StorageFile sourceFile)
+        {
+            using (System.IO.Stream fileStream = await sourceFile.OpenStreamForWriteAsync())
+            {
+                await SavePhoto(fileStream, "profile_image.png");
+            }
+        }
 
-        //public async void OpenProfilePicturePicker_EditProfilePopup_ButtonClick(object sender, RoutedEventArgs e)
-        //{
-        //    StorageFile pickedImageFile = await GetImageAsync();
-        //    if (pickedImageFile != null)
-        //    {
-        //        using (IRandomAccessStream fileStream = await pickedImageFile.OpenAsync(Windows.Storage.FileAccessMode.Read))
-        //        {
-        //            BitmapImage bitmapImage = new BitmapImage();
-        //            await bitmapImage.SetSourceAsync(fileStream);
+        private static async Task<string> SavePhoto(Stream photoToSave, string fileName)
+        {
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile photoFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+            using (var photoOutputStream = await photoFile.OpenStreamForWriteAsync())
+            {
+                await photoToSave.CopyToAsync(photoOutputStream);
+            }
 
-        //            EditedProfileImage = bitmapImage;
-        //        }
-        //    }
-        //}
+            return photoFile.Path;
+        }
 
-        //private async Task<StorageFile> GetImageAsync()
-        //{
-        //    var filePicker = new FileOpenPicker();
+        private async void LoadProfileImage()
+        {
+            StorageFolder appStorageFolder = ApplicationData.Current.LocalFolder;
+            try
+            {
+                StorageFile sourceFile = await appStorageFolder.GetFileAsync("profile_image.png");
+                if (sourceFile != null)
+                {
+                    using (IRandomAccessStream fileStream = await sourceFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite))
+                    {
+                        BitmapImage bitmapImage = new BitmapImage();
+                        await bitmapImage.SetSourceAsync(fileStream);
 
-        //    //// Get the current window's HWND by passing in the Window object
-        //    //var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(_target);
+                        ProfileImage = bitmapImage;
+                    }
+                }
+            }
+            catch
+            {
+                // File not found or something else
+            }
+        }
 
-        //    //// Associate the HWND with the file picker
-        //    //WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hwnd);
+        private async Task DeleteProfileImageAsync()
+        {
+            StorageFolder appStorageFolder = ApplicationData.Current.LocalFolder;
+            try
+            {
+                StorageFile sourceFile = await appStorageFolder.GetFileAsync("profile_image.png");
+                if (sourceFile != null)
+                {
+                    await sourceFile.DeleteAsync();
 
-        //    filePicker.FileTypeFilter.Add(".png");
-        //    filePicker.FileTypeFilter.Add(".jpg");
-        //    filePicker.FileTypeFilter.Add(".jpeg");
-        //    filePicker.FileTypeFilter.Add(".bmp");
-        //    filePicker.FileTypeFilter.Add(".webp");
-
-        //    StorageFile file = await filePicker.PickSingleFileAsync();
-        //    if (file != null)
-        //    {
-        //        // Application now has read/write access to the picked file
-        //        return file;
-        //    }
-        //    else
-        //    {
-        //        // User or something canceled operation;
-        //        return null;
-        //    }
-        //}
+                    EditedProfileImageSourceFile = null;
+                    EditedProfileImage = null;
+                }
+            }
+            catch
+            {
+                // File not found or something else
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)

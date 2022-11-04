@@ -18,7 +18,7 @@
             <RowDefinition Height="56"/>
         </Grid.RowDefinitions>
 
-        <!--Top Bar, can later be used, if needed-->
+        <!--TopBar: can later be used, if needed-->
         <Grid x:Name="AppTopBar" Grid.Row="0" Background="{ThemeResource NoticeMe_SecondaryBackgroundColorBrush}">
             <Grid.ColumnDefinitions>
                 
@@ -31,13 +31,14 @@
         </Grid>
 
 
+        <!--ContentFrame: displays all pages, except this one-->
         <Frame Grid.Row="1" x:Name="ContentFrame"/>
 
 
+        <!--BottomBar: navigation bar-->
         <Grid x:Name="AppNavigationBar" 
               Grid.Row="2" 
               Background="{ThemeResource NoticeMe_SecondaryBackgroundColorBrush}">
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="56"/>
             </Grid.RowDefinitions>
