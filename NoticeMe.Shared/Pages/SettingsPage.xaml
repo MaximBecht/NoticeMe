@@ -9,6 +9,33 @@
     Background="{ThemeResource NoticeMe_PrimaryBackgroundColorBrush}">
 
     <Grid>
-        <TextBlock Text="Settings Page"/>
+        <StackPanel Spacing="10" Margin="20">
+            <ComboBox Header="Theme" Width="200" MaxDropDownHeight="300">
+                <x:String>System default</x:String>
+                <x:String>Light</x:String>
+                <x:String>Dark</x:String>
+                <x:String>High contrast black</x:String>
+                <x:String>High contrast white</x:String>
+            </ComboBox>
+            <ComboBox Header="Font" Width="200" MaxDropDownHeight="300">
+                <x:String>AkzidenzGrotesk</x:String>
+                <x:String>Helvetica</x:String>
+                <x:String>Didot</x:String>
+                <x:String>Baskerville</x:String>
+                <x:String>GillSans</x:String>
+                <x:String>Bembo</x:String>
+                <x:String>Sabon</x:String>
+                <x:String>Georgia</x:String>
+                <x:String>NewsGothic</x:String>
+                <x:String>Myriad</x:String>
+                <x:String>Minion</x:String>
+                <x:String>MrsEaves</x:String>
+                <x:String>Garamond</x:String>
+                <x:String>Gotham</x:String>
+                <x:String>Futura</x:String>
+                <x:String>Bodoni</x:String>
+                <x:String>Arial</x:String>
+            </ComboBox>
+        </StackPanel>
     </Grid>
 </Page>

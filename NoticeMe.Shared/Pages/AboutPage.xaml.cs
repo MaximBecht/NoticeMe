@@ -20,6 +20,8 @@ namespace NoticeMe.Pages
         public AboutPage()
         {
             this.InitializeComponent();
+
+            //((App)App.Current).ChangeTheme(App.Theme.Dark, true);
         }
     }
 }

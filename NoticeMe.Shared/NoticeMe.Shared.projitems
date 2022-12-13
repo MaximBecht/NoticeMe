@@ -19,8 +19,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\IoTDevice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\UserData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ObjectSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\HomePageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ProfileViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\UserViewModel.cs" />
@@ -50,6 +52,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="$(MSBuildThisFileDirectory)Assets\Themes\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="$(MSBuildThisFileDirectory)Assets\Themes\LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Page Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

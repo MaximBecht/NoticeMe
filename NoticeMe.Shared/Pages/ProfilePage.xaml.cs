@@ -9,7 +9,7 @@ namespace NoticeMe.Pages
         public ProfileViewModel ProfileViewModel;
         public ProfilePage()
         {
-            ProfileViewModel = PageNavigator.ProfileViewModel; ;
+            ProfileViewModel = PageNavigator.ProfileViewModel;
             this.DataContext = ProfileViewModel;
             this.InitializeComponent();
         }

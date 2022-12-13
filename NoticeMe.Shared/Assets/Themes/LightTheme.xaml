@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:media="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    
+    <!--Background Color Brushes-->
+    <SolidColorBrush x:Key="NoticeMe_PrimaryBackgroundColorBrush" Color="#CBF1F5"/>
+    <SolidColorBrush x:Key="NoticeMe_SecondaryBackgroundColorBrush" Color="#71C9CE"/>
+
+    <!--Text Color Brushes-->
+    <SolidColorBrush x:Key="NoticeMe_SelectedTextColorBrush" Color="#FF5F1F"/>
+    <SolidColorBrush x:Key="NoticeMe_NormalTextColorBrush" Color="#222831"/>
+    <SolidColorBrush x:Key="NoticeMe_DisabledTextColorBrush" Color="#393E46"/>
+
+    <!--Button Color Brushes-->
+    <SolidColorBrush x:Key="NoticeMe_DefaultTransparentButtonColorBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="NoticeMe_SelectedButtonIconColorBrush" Color="#FF5F1F"/>
+    <SolidColorBrush x:Key="NoticeMe_NormalButtonIconColorBrush" Color="#222831"/>
+    <SolidColorBrush x:Key="NoticeMe_DisabledButtonIconColorBrush" Color="#393E46"/>
+</ResourceDictionary>

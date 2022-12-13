@@ -3,14 +3,50 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:NoticeMe.Pages"
+    xmlns:vm="using:NoticeMe.Data.ViewModels"
+    xmlns:m="using:NoticeMe.Data.DataModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource NoticeMe_PrimaryBackgroundColorBrush}">
+    Background="{StaticResource NoticeMe_PrimaryBackgroundColorBrush}">
 
     <Grid>
-        <TextBlock>
-            Home Page
-        </TextBlock>
+        <ListView x:Name="IoTDeviceList"
+            Height="auto"
+            MinWidth="550"
+            BorderThickness="1"
+            BorderBrush="{StaticResource NoticeMe_SecondaryBackgroundColorBrush}"
+            ItemsSource="{x:Bind HomePageViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+
+            <!-- Data Template Used: -->
+            <!-- The data template is bound to a custom-created data type called CustomDataObject. -->
+            <!-- The full code for the class can be found in this page's source code, but its attributes are referenced/bound below. -->
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="m:IoTDevice">
+                    <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="150"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{x:Bind PreviewImage}" MaxHeight="100" Stretch="Fill"/>
+
+                        <StackPanel Margin="12,0,0,0" Grid.Column="1" >
+                            <TextBlock Text="{x:Bind Name}" FontSize="14" FontWeight="SemiBold" Style="{ThemeResource BaseTextBlockStyle}"
+                                    HorizontalAlignment="Left" Margin="0,0,0,6" LineHeight="20"/>
+                            <TextBlock Text="{x:Bind Type}" FontFamily="Segoe UI" FontWeight="Normal" Style="{ThemeResource BodyTextBlockStyle}"
+                                    TextTrimming="CharacterEllipsis" Width="350" MaxLines="1"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Bind Keystrokes}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,0"/>
+                                <TextBlock Text=" Keystrokes " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                <TextBlock Text=" ⋅ " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold"
+                                        HorizontalAlignment="Left"/>
+                                <TextBlock Text="{x:Bind TypingSpeed}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="5,0,0,0"/>
+                                <TextBlock Text=" Typing Speed " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

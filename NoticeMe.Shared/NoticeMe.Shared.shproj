@@ -11,6 +11,8 @@
   <Import Project="NoticeMe.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
   <ItemGroup>
+    <UpToDateCheckInput Remove="Assets\Themes\DarkTheme.xaml" />
+    <UpToDateCheckInput Remove="Assets\Themes\LightTheme.xaml" />
     <UpToDateCheckInput Remove="Pages\AboutPage.xaml" />
     <UpToDateCheckInput Remove="Pages\EditProfilePage.xaml" />
     <UpToDateCheckInput Remove="Pages\HomePage.xaml" />
@@ -20,9 +22,12 @@
     <UpToDateCheckInput Remove="ResourceDictionary.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <_Globbed_Compile Remove="Assets\Themes\LightTheme.xaml.cs" />
     <_Globbed_Compile Remove="DataManager.cs" />
+    <_Globbed_Compile Remove="Data\DataModels\IoTDevice.cs" />
     <_Globbed_Compile Remove="Data\DataModels\UserData.cs" />
     <_Globbed_Compile Remove="Data\ObjectSerializer.cs" />
+    <_Globbed_Compile Remove="Data\ViewModels\HomePageViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\ProfileViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
@@ -66,9 +71,14 @@
     <_Globbed_Content Remove="Assets\Images\icon_material_leaderboard_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_left_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_settings_64px.png" />
+    <_Globbed_Content Remove="Assets\Themes\DarkTheme.xaml" />
+    <_Globbed_Content Remove="Assets\Themes\LightTheme.xaml" />
+    <_Globbed_Content Remove="Assets\Themes\LightTheme.xaml.cs" />
     <_Globbed_Content Remove="Assets\xaml_binding_example.txt" />
   </ItemGroup>
   <ItemGroup>
+    <_Globbled_Page Remove="Assets\Themes\DarkTheme.xaml" />
+    <_Globbled_Page Remove="Assets\Themes\LightTheme.xaml" />
     <_Globbled_Page Remove="Pages\AboutPage.xaml" />
     <_Globbled_Page Remove="Pages\EditProfilePage.xaml" />
     <_Globbled_Page Remove="Pages\HomePage.xaml" />

@@ -7,7 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource NoticeMe_PrimaryBackgroundColorBrush}">
+    Background="{StaticResource NoticeMe_PrimaryBackgroundColorBrush}">
 
     <Page.Resources>
         <t:BoolToVisibilityConverter x:Key="BoolToVisibility" />
@@ -26,13 +26,13 @@
 
             <Button Click="{x:Bind ProfileViewModel.OpenEditPageButton}" 
                     HorizontalAlignment="Center" Margin="0,0,0,10"
-                    Background="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}">
+                    Background="{StaticResource NoticeMe_SelectedButtonIconColorBrush}">
                 <StackPanel>
                     <BitmapIcon UriSource="ms-appx:///Assets/Images/icon_material_edit_64px.png" 
-                            Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"
+                            Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"
                             VerticalAlignment="Center" HorizontalAlignment="Center"
                             Height="24" Width="24"/>
-                    <TextBlock FontSize="12" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}" Text="Edit Profile" HorizontalAlignment="Center" Margin="0,2,0,5"/>
+                    <TextBlock FontSize="12" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}" Text="Edit Profile" HorizontalAlignment="Center" Margin="0,2,0,5"/>
                 </StackPanel>
             </Button>
         </StackPanel>

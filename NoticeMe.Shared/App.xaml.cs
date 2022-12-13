@@ -5,8 +5,13 @@ using Microsoft.UI.Xaml.Navigation;
 using NoticeMe.Data;
 using NoticeMe.Pages;
 using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
+using Windows.Storage;
+using Windows.UI.Popups;
 
 namespace NoticeMe
 {
@@ -42,6 +47,8 @@ namespace NoticeMe
         {
             await DataManager.LoadAllDataAsync();
             DataManager.InitAutoSaver();
+
+            SetThemeOnStartup();
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -186,6 +193,112 @@ namespace NoticeMe
             global::Uno.UI.Adapter.Microsoft.Extensions.Logging.LoggingAdapter.Initialize();
 #endif
 #endif
+        }
+
+
+        public enum Theme
+        {
+            Default,
+            Light,
+            Dark,
+            HighContrastBlack,
+            HighContrastWhite
+        }
+        public enum Font
+        {
+            AkzidenzGrotesk,
+            Helvetica,
+            Didot,
+            Baskerville,
+            GillSans,
+            Bembo,
+            Sabon,
+            Georgia,
+            NewsGothic,
+            Myriad,
+            Minion,
+            MrsEaves,
+            Garamond,
+            Gotham,
+            Futura,
+            Bodoni,
+            Arial,
+            TimesNewRoman,
+            Verdana,
+            Rockwell,
+            FranklinGothic,
+            Univers,
+            Frutiger,
+            Avenir,
+        }
+        private static void SetThemeOnStartup()
+        {
+            // ToDo: if(theme like OS Theme setting)                -> toggle       in settings
+            // ToDo: theme selection                                -> dropdown     in settings
+            // ToDo: font selection + save + .xaml dictionaries     -> dropdown     in settings
+
+            bool setOSRequestedTheme = true;
+
+            if (setOSRequestedTheme)
+            {
+                ApplicationTheme requestedTheme = App.Current.RequestedTheme;
+                if (requestedTheme == ApplicationTheme.Light)
+                {
+                    ((App)Application.Current).ChangeTheme(Theme.Light, false);
+                }
+                else if (requestedTheme == ApplicationTheme.Dark)
+                {
+                    ((App)Application.Current).ChangeTheme(Theme.Dark, false);
+                }
+            }
+            else
+            {
+                ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                Theme requestedTheme = Theme.Default;
+                if (localSettings.Values.ContainsKey("AppTheme"))
+                {
+                    requestedTheme = ParseEnum<Theme>(localSettings.Values["AppTheme"]);
+                }
+
+                ((App)Application.Current).ChangeTheme(requestedTheme, true);
+            }
+        }
+        public void ChangeTheme(Theme theme, bool refresh)
+        {
+            switch (theme)
+            {
+                case Theme.Default: ChangeThemeSource("ms-appx:///Assets/Themes/LightTheme.xaml"); break;
+                case Theme.Light: ChangeThemeSource("ms-appx:///Assets/Themes/LightTheme.xaml"); break;
+                case Theme.Dark: ChangeThemeSource("ms-appx:///Assets/Themes/DarkTheme.xaml"); break;
+                case Theme.HighContrastBlack: ChangeThemeSource("ms-appx:///Assets/Themes/DarkTheme.xaml"); break;
+                case Theme.HighContrastWhite: ChangeThemeSource("ms-appx:///Assets/Themes/DarkTheme.xaml"); break;
+            }
+
+            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            localSettings.Values["AppTheme"] = theme.ToString();
+
+            if (refresh)
+            {
+                var rootFrame = _window.Content as Frame;
+                rootFrame.Navigate(typeof(MainPage), null);
+            }
+        }
+        private void ChangeThemeSource(string source)
+        {
+            Application.Current.Resources.MergedDictionaries[0].Source = new Uri(source);
+        }
+        public void ChangeFont(Font font)
+        {
+
+        }
+
+
+        private static T ParseEnum<T>(object value)
+        {
+            if (value == null)
+                return default(T);
+            return (T)Enum.Parse(typeof(T), value.ToString());
         }
     }
 }

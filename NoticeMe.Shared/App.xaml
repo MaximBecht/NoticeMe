@@ -6,9 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!--<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />-->
                 <!-- Add resource dictionaries here -->
-                <ResourceDictionary Source="ResourceDictionary.xaml"/>
+                
+                <!--<ResourceDictionary x:Name="FontTheme" Source="Assets/Themes/DefaultFontTheme.xaml"/>-->
+                <ResourceDictionary x:Name="ColorTheme" Source="Assets/Themes/LightTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <!-- Add resources here -->
         </ResourceDictionary>
