@@ -35,6 +35,9 @@ namespace NoticeMe
 #if HAS_UNO || NETFX_CORE
             this.Suspending += OnSuspending;
 #endif
+
+
+            SetThemeOnStartup();
         }
 
 
@@ -47,8 +50,6 @@ namespace NoticeMe
         {
             await DataManager.LoadAllDataAsync();
             DataManager.InitAutoSaver();
-
-            SetThemeOnStartup();
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -280,8 +281,7 @@ namespace NoticeMe
 
             if (refresh)
             {
-                var rootFrame = _window.Content as Frame;
-                rootFrame.Navigate(typeof(MainPage), null);
+                RefreshUI();
             }
         }
         private void ChangeThemeSource(string source)
@@ -293,6 +293,11 @@ namespace NoticeMe
 
         }
 
+        public void RefreshUI()
+        {
+            var rootFrame = _window.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage), null);
+        }
 
         private static T ParseEnum<T>(object value)
         {

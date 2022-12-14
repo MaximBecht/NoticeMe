@@ -25,22 +25,26 @@
                 <DataTemplate x:DataType="m:IoTDevice">
                     <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" MinWidth="150"/>
+                            <ColumnDefinition Width="Auto" MinWidth="100"/>
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Image Source="{x:Bind PreviewImage}" MaxHeight="100" Stretch="Fill"/>
 
                         <StackPanel Margin="12,0,0,0" Grid.Column="1" >
-                            <TextBlock Text="{x:Bind Name}" FontSize="14" FontWeight="SemiBold" Style="{ThemeResource BaseTextBlockStyle}"
-                                    HorizontalAlignment="Left" Margin="0,0,0,6" LineHeight="20"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="16" FontWeight="SemiBold" Style="{ThemeResource BaseTextBlockStyle}"
+                                        LineHeight="20"/>
+                                <TextBlock Text="{x:Bind Status.DisplayStatus, Mode=OneWay}" FontSize="14" FontWeight="Thin" Style="{ThemeResource BaseTextBlockStyle}"
+                                        VerticalAlignment="Center" Margin="12,0,6,0" LineHeight="20"/>
+                            </StackPanel>
                             <TextBlock Text="{x:Bind Type}" FontFamily="Segoe UI" FontWeight="Normal" Style="{ThemeResource BodyTextBlockStyle}"
                                     TextTrimming="CharacterEllipsis" Width="350" MaxLines="1"/>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Bind Keystrokes}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,0"/>
+                                <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,0"/>
                                 <TextBlock Text=" Keystrokes " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
                                 <TextBlock Text=" ⋅ " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold"
                                         HorizontalAlignment="Left"/>
-                                <TextBlock Text="{x:Bind TypingSpeed}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="5,0,0,0"/>
+                                <TextBlock Text="{x:Bind TypingSpeed, Mode=OneWay}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="5,0,0,0"/>
                                 <TextBlock Text=" Typing Speed " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
                             </StackPanel>
                         </StackPanel>

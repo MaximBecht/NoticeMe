@@ -10,6 +10,15 @@
 
     <Grid>
         <StackPanel Spacing="10" Margin="20">
+            <ComboBox Header="Language" Width="200" MaxDropDownHeight="300">
+                <x:String>English</x:String>
+                <x:String>Deutsch</x:String>
+                <x:String>Español</x:String>
+                <x:String>Français</x:String>
+                <x:String>Italiano</x:String>
+                <x:String>简体中文</x:String>
+                <x:String>日本語</x:String>
+            </ComboBox>
             <ComboBox Header="Theme" Width="200" MaxDropDownHeight="300">
                 <x:String>System default</x:String>
                 <x:String>Light</x:String>
@@ -18,7 +27,7 @@
                 <x:String>High contrast white</x:String>
             </ComboBox>
             <ComboBox Header="Font" Width="200" MaxDropDownHeight="300">
-                <x:String>AkzidenzGrotesk</x:String>
+                <x:String>Akzidenz Grotesk</x:String>
                 <x:String>Helvetica</x:String>
                 <x:String>Didot</x:String>
                 <x:String>Baskerville</x:String>
@@ -26,10 +35,10 @@
                 <x:String>Bembo</x:String>
                 <x:String>Sabon</x:String>
                 <x:String>Georgia</x:String>
-                <x:String>NewsGothic</x:String>
+                <x:String>News Gothic</x:String>
                 <x:String>Myriad</x:String>
                 <x:String>Minion</x:String>
-                <x:String>MrsEaves</x:String>
+                <x:String>Mrs Eaves</x:String>
                 <x:String>Garamond</x:String>
                 <x:String>Gotham</x:String>
                 <x:String>Futura</x:String>

@@ -26,7 +26,9 @@ namespace NoticeMe.Pages
         public HomePage()
         {
             HomePageViewModel = new HomePageViewModel();
-            this.DataContext = HomePageViewModel;
+            if(this.DataContext == null)
+                this.DataContext = HomePageViewModel;
+
             this.InitializeComponent();
 
             Test();
@@ -47,6 +49,11 @@ namespace NoticeMe.Pages
             HomePageViewModel.IoTDevices.Add(new IoTDevice("Wow", "690-069-690", "Smart Lamp", null));
             HomePageViewModel.IoTDevices.Add(new IoTDevice("LOL", "420-420-420", "Keyboard Detector", null));
             HomePageViewModel.IoTDevices.Add(new IoTDevice("Smash It", "777-777-777", "Mouse Detector", null));
+
+            HomePageViewModel.IoTDevices[0].Status.Category = StatusCategory.Online;
+            HomePageViewModel.IoTDevices[1].Status.Category = StatusCategory.Afk;
+
+            HomePageViewModel.IoTDevices[0].Name= "Another one";
         }
     }
 }

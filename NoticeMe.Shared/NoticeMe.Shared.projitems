@@ -119,6 +119,15 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_leaderboard_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_left_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_settings_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Status\afk.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Status\offline.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Status\online.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
     <Content Include="$(MSBuildThisFileDirectory)Assets\xaml_binding_example.txt" />
     <_Globbled_Page Include="$(MSBuildThisFileDirectory)**/*.xaml" Exclude="@(Page);@(ApplicationDefinition)">
       <SubType>Designer</SubType>

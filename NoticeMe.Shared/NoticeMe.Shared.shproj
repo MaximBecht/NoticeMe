@@ -71,6 +71,9 @@
     <_Globbed_Content Remove="Assets\Images\icon_material_leaderboard_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_left_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_settings_64px.png" />
+    <_Globbed_Content Remove="Assets\Status\afk.txt" />
+    <_Globbed_Content Remove="Assets\Status\offline.txt" />
+    <_Globbed_Content Remove="Assets\Status\online.txt" />
     <_Globbed_Content Remove="Assets\Themes\DarkTheme.xaml" />
     <_Globbed_Content Remove="Assets\Themes\LightTheme.xaml" />
     <_Globbed_Content Remove="Assets\Themes\LightTheme.xaml.cs" />
