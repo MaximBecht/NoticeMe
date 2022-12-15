@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace NoticeMe.Data.ViewModels
 {
-    public partial class HomePageViewModel : INotifyPropertyChanged
+    public partial class HomeViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<IoTDevice> IoTDevices { get; set; } = new();
 

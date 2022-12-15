@@ -22,9 +22,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\IoTDevice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\UserData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ObjectSerializer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\HomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\HomeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\SettingsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\UserViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageNavigator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml.cs">
@@ -119,6 +120,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_leaderboard_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_left_64px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_material_settings_64px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_particle_photon_600px.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Status\afk.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>

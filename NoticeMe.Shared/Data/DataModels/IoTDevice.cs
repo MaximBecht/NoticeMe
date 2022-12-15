@@ -1,4 +1,6 @@
-﻿using Microsoft.UI.Xaml.Media.Imaging;
+﻿using Microsoft.UI;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Imaging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,9 @@ namespace NoticeMe.Data.DataModels
     public class IoTDevice : INotifyPropertyChanged
     {
         private string _name = "default";
+        private int _typingSpeed = 0;
+        private int _keyStrokes = 0;
+
         public string Name 
         { 
             get => _name;
@@ -32,8 +37,30 @@ namespace NoticeMe.Data.DataModels
         public BitmapImage PreviewImage { get; set;}
 
         public Status Status { get; set; }
-        public int TypingSpeed { get; set; }
-        public int Keystrokes { get; set; }
+        public int TypingSpeed 
+        { 
+            get => _typingSpeed;
+            set
+            {
+                if (_typingSpeed != value) 
+                {
+                    _typingSpeed = value;
+                    OnPropertyChanged("TypingSpeed");
+                }
+            }
+        }
+        public int Keystrokes
+        {
+            get => _keyStrokes;
+            set
+            {
+                if(_keyStrokes != value)
+                {
+                    _keyStrokes = value;
+                    OnPropertyChanged("Keystrokes");
+                }
+            }
+        }
 
         public IoTDevice() 
         {
@@ -78,6 +105,7 @@ namespace NoticeMe.Data.DataModels
                     _category = value;
                     OnPropertyChanged("Category");
                     OnPropertyChanged("DisplayStatus");
+                    OnPropertyChanged("DisplayStatusColor");
                 }
             }
         }
@@ -86,6 +114,24 @@ namespace NoticeMe.Data.DataModels
             get 
             {
                 return $"( {GetRandomStatusString()} )";
+            }
+        }
+        public SolidColorBrush DisplayStatusColor
+        {
+            get
+            {
+                if (Category == StatusCategory.Offline)
+                {
+                    return new SolidColorBrush(Colors.Red);
+                }
+                else if(Category == StatusCategory.Online)
+                {
+                    return new SolidColorBrush(Colors.Green);
+                }
+                else
+                {
+                    return new SolidColorBrush(Colors.Yellow);
+                }
             }
         }
 

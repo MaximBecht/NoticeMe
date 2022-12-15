@@ -14,20 +14,24 @@ namespace NoticeMe
     {
         private static Frame _contentFrame;
         private static MainViewModel _mainViewModel;
-        private static ProfileViewModel _profileViewModel;
+
+        private static ProfileViewModel _profileViewModel = new();
+        private static HomeViewModel _homeViewModel = new();
+        private static SettingsViewModel _settingsViewModel = new();
+
 
         private static string _lastTitle;
         private static BitmapIcon _lastActiveIcon;
         private static TextBlock _lastActiveText;
 
         public static ProfileViewModel ProfileViewModel { get => _profileViewModel; set => _profileViewModel = value; }
+        public static HomeViewModel HomeViewModel { get => _homeViewModel; set => _homeViewModel = value; }
+        public static SettingsViewModel SettingsViewModel { get => _settingsViewModel; set => _settingsViewModel = value; }
 
         public static void Init(Frame contentFrame, MainViewModel mainViewModel)
         {
             _contentFrame = contentFrame;
             _mainViewModel = mainViewModel;
-
-            ProfileViewModel = new ProfileViewModel();
         }
 
         public static void NavigationButton_Click(object sender, RoutedEventArgs e)
@@ -44,19 +48,24 @@ namespace NoticeMe
                     break;
                 case "NavigateProfileBtn":
                     _contentFrame.Navigate(typeof(ProfilePage), ProfileViewModel, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Profile"); break;
+                    _mainViewModel.ChangePageTitle("Profile"); 
+                    break;
                 case "NavigateHomeBtn":
-                    _contentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Home"); break;
+                    _contentFrame.Navigate(typeof(HomePage), HomeViewModel, new EntranceNavigationTransitionInfo());
+                    _mainViewModel.ChangePageTitle("Home"); 
+                    break;
                 case "NavigateSettingsBtn":
-                    _contentFrame.Navigate(typeof(SettingsPage), null, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Settings"); break;
+                    _contentFrame.Navigate(typeof(SettingsPage), SettingsViewModel, new EntranceNavigationTransitionInfo());
+                    _mainViewModel.ChangePageTitle("Settings"); 
+                    break;
                 case "NavigateAboutBtn":
                     _contentFrame.Navigate(typeof(AboutPage), null, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("About"); break;
+                    _mainViewModel.ChangePageTitle("About"); 
+                    break;
                 default:
-                    _contentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Home"); break;
+                    _contentFrame.Navigate(typeof(HomePage), HomeViewModel, new EntranceNavigationTransitionInfo());
+                    _mainViewModel.ChangePageTitle("Home"); 
+                    break;
             }
 
             SetButtonVisualState(b);

@@ -27,9 +27,9 @@
     <_Globbed_Compile Remove="Data\DataModels\IoTDevice.cs" />
     <_Globbed_Compile Remove="Data\DataModels\UserData.cs" />
     <_Globbed_Compile Remove="Data\ObjectSerializer.cs" />
-    <_Globbed_Compile Remove="Data\ViewModels\HomePageViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\ProfileViewModel.cs" />
+    <_Globbed_Compile Remove="Data\ViewModels\SettingsViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
     <_Globbed_Compile Remove="PageNavigator.cs" />
     <_Globbed_Compile Remove="Pages\AboutPage.xaml.cs" />
@@ -71,6 +71,7 @@
     <_Globbed_Content Remove="Assets\Images\icon_material_leaderboard_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_left_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_settings_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\icon_particle_photon_600px.jpg" />
     <_Globbed_Content Remove="Assets\Status\afk.txt" />
     <_Globbed_Content Remove="Assets\Status\offline.txt" />
     <_Globbed_Content Remove="Assets\Status\online.txt" />

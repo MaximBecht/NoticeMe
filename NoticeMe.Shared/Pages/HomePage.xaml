@@ -16,36 +16,43 @@
             MinWidth="550"
             BorderThickness="1"
             BorderBrush="{StaticResource NoticeMe_SecondaryBackgroundColorBrush}"
-            ItemsSource="{x:Bind HomePageViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            ItemsSource="{x:Bind HomeViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
 
-            <!-- Data Template Used: -->
-            <!-- The data template is bound to a custom-created data type called CustomDataObject. -->
-            <!-- The full code for the class can be found in this page's source code, but its attributes are referenced/bound below. -->
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="m:IoTDevice">
                     <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" MinWidth="100"/>
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition MinWidth="25" MaxWidth="100"/>
+                            <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="{x:Bind PreviewImage}" MaxHeight="100" Stretch="Fill"/>
+                        
+                        <Image Source="Assets/Images/icon_particle_photon_600px.jpg" MinHeight="25" MaxHeight="100" Stretch="Fill"/>
 
                         <StackPanel Margin="12,0,0,0" Grid.Column="1" >
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="16" FontWeight="SemiBold" Style="{ThemeResource BaseTextBlockStyle}"
-                                        LineHeight="20"/>
-                                <TextBlock Text="{x:Bind Status.DisplayStatus, Mode=OneWay}" FontSize="14" FontWeight="Thin" Style="{ThemeResource BaseTextBlockStyle}"
-                                        VerticalAlignment="Center" Margin="12,0,6,0" LineHeight="20"/>
+                                <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="18" FontWeight="SemiBold" 
+                                           Style="{ThemeResource BaseTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"
+                                           LineHeight="20" Margin="0,0,6,0"/>
+
+                                <Ellipse Width="6" Height="6" Fill="{x:Bind Status.DisplayStatusColor}"/>
+
+                                <TextBlock Text="{x:Bind Status.DisplayStatus, Mode=OneWay}" FontSize="16" FontWeight="Thin" 
+                                           Style="{ThemeResource BaseTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"
+                                           VerticalAlignment="Center" Margin="6,0,0,0" LineHeight="20"/>
                             </StackPanel>
-                            <TextBlock Text="{x:Bind Type}" FontFamily="Segoe UI" FontWeight="Normal" Style="{ThemeResource BodyTextBlockStyle}"
-                                    TextTrimming="CharacterEllipsis" Width="350" MaxLines="1"/>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                <TextBlock Text="Keystrokes: " FontSize="14" FontWeight="Bold" Margin="16,0,6,0" Width="100"
+                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                                <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" FontSize="14" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Right"
+                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                            </StackPanel>
+
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,0"/>
-                                <TextBlock Text=" Keystrokes " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
-                                <TextBlock Text=" ⋅ " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold"
-                                        HorizontalAlignment="Left"/>
-                                <TextBlock Text="{x:Bind TypingSpeed, Mode=OneWay}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="5,0,0,0"/>
-                                <TextBlock Text=" Typing Speed " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                <TextBlock Text="Typing Speed: " FontSize="14" FontWeight="Bold" Margin="16,0,6,0" Width="100"
+                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                                <TextBlock Text="{x:Bind TypingSpeed, Mode=OneWay}" FontSize="14" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Right"
+                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
