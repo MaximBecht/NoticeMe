@@ -10,10 +10,14 @@
                 <!-- Add resource dictionaries here -->
 
                 <!--<ResourceDictionary x:Name="FontTheme" Source="Assets/Themes/DefaultFontTheme.xaml"/>-->
-                <ResourceDictionary x:Name="ColorTheme"/>
+                <ResourceDictionary x:Name="ColorTheme" Source="Assets/Themes/DefaultTheme.xaml"/>
+
+                <!--<ResourceDictionary x:Name="TestControlStyles" Source="Assets/Themes/TestControlStyles.xaml"/>-->
+
             </ResourceDictionary.MergedDictionaries>
             <!-- Add resources here -->
         </ResourceDictionary>
+        
     </Application.Resources>
 
 </Application>

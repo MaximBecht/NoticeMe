@@ -31,21 +31,13 @@
             </ComboBox>
 
             <ComboBox x:Name="themeDropDown" Header="Theme" SelectedItem="{x:Bind SettingsViewModel.DisplaySelectedTheme, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed"
-                      Width="200" MaxDropDownHeight="300"
-                      Background="{ThemeResource NoticeMe_SecondaryBackgroundColorBrush}" >
+                      Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}" Style="{StaticResource NoticeMe_ComboBoxStyle}">
                 <x:String>System default</x:String>
                 <x:String>Light</x:String>
                 <x:String>Dark</x:String>
                 <x:String>High contrast black</x:String>
                 <x:String>High contrast white</x:String>
 
-                <ComboBox.ItemContainerStyle>
-                    <Style TargetType="ComboBoxItem">
-                        <Setter Property="Foreground" Value="{StaticResource NoticeMe_NormalTextColorBrush}"/>
-                        <Setter Property="Background" Value="{StaticResource NoticeMe_SecondaryBackgroundColorBrush}"/>
-                        <Setter Property="BorderBrush" Value="{StaticResource NoticeMe_DisabledTextColorBrush}"/>
-                    </Style>
-                </ComboBox.ItemContainerStyle>
             </ComboBox>
             
             <ComboBox Header="Font" Width="200" MaxDropDownHeight="300">

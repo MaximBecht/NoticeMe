@@ -184,14 +184,20 @@ namespace NoticeMe.Data.DataModels
             {
                 case StatusCategory.Offline: 
                     count = OfflineStatusStrings.Count;
+                    if (count == 0)
+                        return "Offline";
                     index = random.Next(0, count);
                     return OfflineStatusStrings[index];
                 case StatusCategory.Online: 
                     count = OnlineStatusStrings.Count;
+                    if (count == 0)
+                        return "Online";
                     index = random.Next(0, count);
                     return OnlineStatusStrings[index]; 
                 case StatusCategory.Afk: 
                     count = AfkStatusStrings.Count;
+                    if (count == 0)
+                        return "Afk";
                     index = random.Next(0, count);
                     return AfkStatusStrings[index];
             }

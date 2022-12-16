@@ -53,6 +53,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Assets\Themes\TestControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Resource Include="$(MSBuildThisFileDirectory)Assets\Themes\DarkTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
