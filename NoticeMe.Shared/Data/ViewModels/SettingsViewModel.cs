@@ -42,16 +42,16 @@ namespace NoticeMe.Data.ViewModels
 
     public partial class SettingsViewModel : INotifyPropertyChanged
     {
-        private ApplicationTheme _selectedAppTheme = Application.Current.RequestedTheme;
-        public ApplicationTheme SelectedAppTheme 
+        private int _selectedAppThemeIndex;
+        public int SelectedAppThemeIndex 
         {
-            get => _selectedAppTheme;
+            get => _selectedAppThemeIndex;
             set
             {
-                if(_selectedAppTheme != value) 
+                if(_selectedAppThemeIndex != value) 
                 {
-                    _selectedAppTheme = value;
-                    ChangeApplicationTheme(_selectedAppTheme);
+                    _selectedAppThemeIndex = value;
+                    ChangeApplicationTheme(_selectedAppThemeIndex);
                     OnPropertyChanged("SelectedTheme");
                     OnPropertyChanged("DisplaySelectedTheme");
                 }
@@ -62,19 +62,19 @@ namespace NoticeMe.Data.ViewModels
         {
             get
             {
-                return SelectedAppTheme.ToString();
+                return SelectedAppThemeIndex.ToString();
             }
         }
 
 
         public SettingsViewModel() 
         {
-
+            SelectedAppThemeIndex = (int)ApplicationData.Current.LocalSettings.Values["AppTheme"];
         }
 
-        private void ChangeApplicationTheme(ApplicationTheme requestedAppTheme)
+        private void ChangeApplicationTheme(int requestedAppThemeIndex)
         {
-            ApplicationData.Current.LocalSettings.Values["AppTheme"] = (int)requestedAppTheme;
+            ApplicationData.Current.LocalSettings.Values["AppTheme"] = requestedAppThemeIndex;
         }
 
 

@@ -1,6 +1,9 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 using NoticeMe.Data.ViewModels;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace NoticeMe.Pages
 {
@@ -13,7 +16,8 @@ namespace NoticeMe.Pages
             this.InitializeComponent();
 
             PageNavigator.Init(ContentFrame, MainViewModel);
-            PageNavigator.Navigate("Home", typeof(HomePage), NavigateHomeBtn);
+
+            PageNavigator.Navigate("Home", typeof(HomePage), NavigateHomeIcon, NavigateHomeText);
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)

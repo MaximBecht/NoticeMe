@@ -48,13 +48,16 @@ namespace NoticeMe
 
         private void SetThemeOnStartup()
         {
-            ApplicationTheme requestedTheme = ApplicationTheme.Dark;
+            int requestedThemeIndex = 2; // System Default
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("AppTheme"))
             {
-                requestedTheme = (ApplicationTheme)(int)ApplicationData.Current.LocalSettings.Values["AppTheme"];
+                requestedThemeIndex = (int)ApplicationData.Current.LocalSettings.Values["AppTheme"];
             }
 
-            App.Current.RequestedTheme = requestedTheme;
+            if(requestedThemeIndex == 0 || requestedThemeIndex == 1)
+            {
+                App.Current.RequestedTheme = (ApplicationTheme)requestedThemeIndex;
+            }
         }
 
         /// <summary>

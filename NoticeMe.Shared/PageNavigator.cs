@@ -39,37 +39,27 @@ namespace NoticeMe
         {
             Button b = sender as Button;
 
-            _lastTitle = _mainViewModel.GetCurrentPageTitle();
-
             switch (b.Name)
             {
                 case "NavigateScoreboardBtn":
-                    _contentFrame.Navigate(typeof(ScoreboardPage), null, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Scoreboard");
+                    Navigate("Scoreboard", typeof(ScoreboardPage), b, new EntranceNavigationTransitionInfo());
                     break;
                 case "NavigateProfileBtn":
-                    _contentFrame.Navigate(typeof(ProfilePage), ProfileViewModel, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Profile"); 
+                    Navigate("Profile", typeof(ProfilePage), b, new EntranceNavigationTransitionInfo());
                     break;
                 case "NavigateHomeBtn":
-                    _contentFrame.Navigate(typeof(HomePage), HomeViewModel, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Home"); 
+                    Navigate("Home", typeof(HomePage), b, new EntranceNavigationTransitionInfo());
                     break;
                 case "NavigateSettingsBtn":
-                    _contentFrame.Navigate(typeof(SettingsPage), SettingsViewModel, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Settings"); 
+                    Navigate("Settings", typeof(SettingsPage), b, new EntranceNavigationTransitionInfo());
                     break;
                 case "NavigateAboutBtn":
-                    _contentFrame.Navigate(typeof(AboutPage), null, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("About"); 
+                    Navigate("About", typeof(AboutPage), b, new EntranceNavigationTransitionInfo());
                     break;
                 default:
-                    _contentFrame.Navigate(typeof(HomePage), HomeViewModel, new EntranceNavigationTransitionInfo());
-                    _mainViewModel.ChangePageTitle("Home"); 
+                    Navigate("Home", typeof(HomePage), b, new EntranceNavigationTransitionInfo());
                     break;
             }
-
-            SetButtonVisualState(b);
         }
 
         public static void Navigate(string pageTitle, Type pageType, Button navigationBtn = null, NavigationTransitionInfo themeTransitionInfo = null)
@@ -83,51 +73,51 @@ namespace NoticeMe
             _mainViewModel.ChangePageTitle(pageTitle);
 
             if (navigationBtn != null)
-                SetButtonVisualState(navigationBtn);
+            {
+                List<BitmapIcon> icon = new List<BitmapIcon>();
+                List<TextBlock> text = new List<TextBlock>();
+                FindChildren<BitmapIcon>(icon, navigationBtn);
+                FindChildren<TextBlock>(text, navigationBtn);
+
+                if (icon.Count > 0 && text.Count > 0)
+                {
+                    SetButtonVisualState(icon[0], text[0]);
+                }
+            }
+        }
+        public static void Navigate(string pageTitle, Type pageType, BitmapIcon icon, TextBlock text, NavigationTransitionInfo themeTransitionInfo = null)
+        {
+            Navigate(pageTitle, pageType);
+            if (icon != null && text != null)
+                SetButtonVisualState(icon, text);
         }
 
-        private static void SetButtonVisualState(Button b)
+        private static void SetButtonVisualState(BitmapIcon icon, TextBlock text)
         {
-            List<BitmapIcon> icon = new List<BitmapIcon>();
-            List<TextBlock> text = new List<TextBlock>();
-            FindChildren<BitmapIcon>(icon, b);
-            FindChildren<TextBlock>(text, b);
-
-            if (_lastActiveIcon != null)
+            if (_lastActiveIcon != null && _lastActiveText != null)
             {
-                var color = Application.Current.Resources["SystemColorDisabledTextBrush"];
-                SolidColorBrush colorBrush = GetColorFromHex(color.ToString());
+                var colorBrush = (SolidColorBrush)Application.Current.Resources["SystemColorDisabledTextBrush"];
                 _lastActiveIcon.Foreground = colorBrush;
                 _lastActiveText.Foreground = colorBrush;
             }
-            if (icon.Count > 0 && text.Count > 0)
-            {
-                _lastActiveIcon = icon[0];
-                _lastActiveText = text[0];
-                var color = Application.Current.Resources["SystemAccentColor"];
-                SolidColorBrush colorBrush = GetColorFromHex(color.ToString());
-                icon[0].Foreground = colorBrush;
-                text[0].Foreground = colorBrush;
-            }
-        }
-        private static SolidColorBrush GetColorFromHex(string hexaColor)
-        {
-            return new SolidColorBrush(
-                Color.FromArgb(
-                Convert.ToByte(hexaColor.Substring(1, 2), 16),
-                Convert.ToByte(hexaColor.Substring(3, 2), 16),
-                Convert.ToByte(hexaColor.Substring(5, 2), 16),
-                Convert.ToByte(hexaColor.Substring(7, 2), 16)
-            ));
+
+            _lastActiveIcon = icon;
+            _lastActiveText = text;
+            var color = (Color)Application.Current.Resources["SystemAccentColor"];
+            SolidColorBrush brush = new SolidColorBrush(color);
+            icon.Foreground = brush;
+            text.Foreground = brush;
         }
 
         public static object GetViewModel(string pageTitle)
         {
             switch (pageTitle)
             {
+                case "Scoreboard": return null;
+                case "Profile": return ProfileViewModel;
                 case "Home": return _mainViewModel;
-                case "Profile":
-                case "Edit Profile": return ProfileViewModel;
+                case "Settings": return SettingsViewModel;
+                case "About": return null;
                 default: return null;
             }
         }

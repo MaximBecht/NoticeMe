@@ -65,8 +65,8 @@
             </Button>
             <Button x:Name="NavigateHomeBtn" Click="NavigationButton_Click" Grid.Column="2"  Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="{ThemeResource SystemAccentColor}"/>
-                    <TextBlock FontSize="12" Foreground="{ThemeResource SystemAccentColor}" Text="Home" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon x:Name="NavigateHomeIcon" Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="{ThemeResource SystemAccentColor}"/>
+                    <TextBlock x:Name="NavigateHomeText" FontSize="12" Foreground="{ThemeResource SystemAccentColor}" Text="Home" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
             <Button x:Name="NavigateSettingsBtn" Click="NavigationButton_Click" Grid.Column="3"  Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">

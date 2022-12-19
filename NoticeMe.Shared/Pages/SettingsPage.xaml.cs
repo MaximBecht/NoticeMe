@@ -32,7 +32,7 @@ namespace NoticeMe.Pages
 
             this.InitializeComponent();
 
-            themeDropDown.SelectedIndex = (int)SettingsViewModel.SelectedAppTheme;
+            themeDropDown.SelectedIndex = SettingsViewModel.SelectedAppThemeIndex;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -47,7 +47,7 @@ namespace NoticeMe.Pages
 
         private void ThemeDropDown_Closed(object sender, object e)
         {
-            SettingsViewModel.SelectedAppTheme = (ApplicationTheme)themeDropDown.SelectedIndex;
+            SettingsViewModel.SelectedAppThemeIndex = themeDropDown.SelectedIndex;
         }
     }
 }

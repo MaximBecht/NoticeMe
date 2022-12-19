@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.Resources>
+    <!--<Page.Resources>
         <t:BoolToVisibilityConverter x:Key="BoolToVisibility" />
     </Page.Resources>
 
@@ -34,5 +34,5 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-    </ScrollViewer>
+    </ScrollViewer>-->
 </Page>
