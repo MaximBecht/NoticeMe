@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Core;
+using Windows.Globalization;
 using Windows.Storage;
 using Windows.UI.Popups;
 
@@ -43,9 +44,26 @@ namespace NoticeMe
             this.Suspending += OnSuspending;
 #endif
 
+            SetLanguageOnStartup();
             SetThemeOnStartup();
         }
 
+        private void SetLanguageOnStartup()
+        {
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("LanguageIndex"))
+            {
+                int requestedLanguageIndex = (int)ApplicationData.Current.LocalSettings.Values["LanguageIndex"];
+                switch (requestedLanguageIndex)
+                {
+                    case 0: ApplicationLanguages.PrimaryLanguageOverride = "en"; break;
+                    case 1: ApplicationLanguages.PrimaryLanguageOverride = "de-DE"; break;
+                }
+            }
+            else
+            {
+                ApplicationLanguages.PrimaryLanguageOverride = "en";
+            }
+        }
         private void SetThemeOnStartup()
         {
             int requestedThemeIndex = 2; // System Default

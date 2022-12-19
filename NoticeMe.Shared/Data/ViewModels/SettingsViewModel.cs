@@ -1,12 +1,14 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Documents;
 using NoticeMe.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Windows.Globalization;
 using Windows.Storage;
 
 namespace NoticeMe.Data.ViewModels
@@ -53,18 +55,39 @@ namespace NoticeMe.Data.ViewModels
                     _selectedAppThemeIndex = value;
                     ChangeApplicationTheme(_selectedAppThemeIndex);
                     OnPropertyChanged("SelectedTheme");
-                    OnPropertyChanged("DisplaySelectedTheme");
+                }
+            }
+        }
+        private int _selecteLanguageIndex;
+        public int SelectedLanguageIndex
+        {
+            get => _selecteLanguageIndex;
+            set
+            {
+                if (_selecteLanguageIndex != value)
+                {
+                    _selecteLanguageIndex = value;
+                    ChangeLanguage(_selecteLanguageIndex);
+                    OnPropertyChanged("SelectedLanguageIndex");
                 }
             }
         }
 
-        public string DisplaySelectedTheme
-        {
-            get
-            {
-                return SelectedAppThemeIndex.ToString();
-            }
-        }
+        //public int DisplaySelectedLanguage
+        //{
+        //    get
+        //    {
+        //        return SelectedAppThemeIndex;
+        //    }
+        //}
+
+        //public int DisplaySelectedTheme
+        //{
+        //    get
+        //    {
+        //        return SelectedAppThemeIndex;
+        //    }
+        //}
 
 
         public SettingsViewModel() 
@@ -77,8 +100,28 @@ namespace NoticeMe.Data.ViewModels
             {
                 SelectedAppThemeIndex = 2;
             }
+
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("LanguageIndex"))
+            {
+                SelectedLanguageIndex = (int)ApplicationData.Current.LocalSettings.Values["LanguageIndex"];
+            }
+            else
+            {
+                SelectedLanguageIndex = 0;
+            }
         }
 
+
+        private void ChangeLanguage(int requestedLanguageIndex)
+        {
+            switch (requestedLanguageIndex)
+            {
+                case 0: ApplicationLanguages.PrimaryLanguageOverride = "en"; break;
+                case 1: ApplicationLanguages.PrimaryLanguageOverride = "de-DE"; break;
+                default: ApplicationLanguages.PrimaryLanguageOverride = "en"; break;
+            }
+            ApplicationData.Current.LocalSettings.Values["LanguageIndex"] = requestedLanguageIndex;
+        }
         private void ChangeApplicationTheme(int requestedAppThemeIndex)
         {
             ApplicationData.Current.LocalSettings.Values["AppTheme"] = requestedAppThemeIndex;

@@ -13,6 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using System.Xml.Serialization;
+using Windows.ApplicationModel.Resources;
 
 namespace NoticeMe.Data.ViewModels
 {
@@ -62,7 +63,8 @@ namespace NoticeMe.Data.ViewModels
 
         public void ChangePageTitle(string title)
         {
-            ActivePageTitle = title;
+            var resourceLoader = ResourceLoader.GetForViewIndependentUse();
+            ActivePageTitle = resourceLoader.GetString(title);
         }
         public string GetCurrentPageTitle()
         {

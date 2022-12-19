@@ -13,28 +13,28 @@
     <Grid>
         <StackPanel Spacing="10" Margin="20">
 
-            <TextBlock Text="General" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,16,0,0"/>
+            <TextBlock x:Uid="GeneralTitle" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,16,0,0"/>
 
-            <ComboBox Header="Language" MinWidth="250" MaxDropDownHeight="400">
+            <ComboBox x:Uid="LanguageComboBox" x:Name="LanguageComboBox" MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedLanguageIndex, Mode=OneWay}" DropDownClosed="LanguageDropDown_Closed">
                 <x:String>English</x:String>
                 <x:String>Deutsch</x:String>
-                <x:String>Español</x:String>
+                <!--<x:String>Español</x:String>
                 <x:String>Français</x:String>
                 <x:String>Italiano</x:String>
                 <x:String>简体中文</x:String>
-                <x:String>日本語</x:String>
+                <x:String>日本語</x:String>-->
             </ComboBox>
 
-            <TextBlock Text="Personalization" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,16,0,0"/>
+            <TextBlock x:Uid="PersonalizationTitle" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,16,0,0"/>
 
-            <ComboBox x:Name="themeDropDown" Header="Theme" Description="Restart is required to apply theme." MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.DisplaySelectedTheme, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed">
+            <ComboBox x:Uid="ThemeComboBox" x:Name="ThemeComboBox" MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedAppThemeIndex, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed">
                 <x:String>Light</x:String>
                 <x:String>Dark</x:String>
                 <x:String>System default</x:String>
 
             </ComboBox>
 
-            <ComboBox Header="Font" MinWidth="250" MaxDropDownHeight="400">
+            <ComboBox x:Uid="FontComboBox" MinWidth="250" MaxDropDownHeight="400">
                 <x:String>Akzidenz Grotesk</x:String>
                 <x:String>Helvetica</x:String>
                 <x:String>Didot</x:String>

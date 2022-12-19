@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>Über uns</value>
     <comment>AppTopBar Page Navigation Title</comment>
   </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>NoticeMe</value>
   </data>
   <data name="FontComboBox.Description" xml:space="preserve">
-    <value>General font used. Requires app restart to apply.</value>
+    <value>Anwendungsweit genutzte Schriftart. Änderungen werden erst nach Neustart angewand.</value>
     <comment>Settings ComboBox</comment>
   </data>
   <data name="FontComboBox.Header" xml:space="preserve">
-    <value>Font</value>
+    <value>Schriftart</value>
     <comment>Settings ComboBox</comment>
   </data>
   <data name="GeneralTitle.Text" xml:space="preserve">
-    <value>General</value>
+    <value>Allgemein</value>
     <comment>Settings Title TextBlock</comment>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>Start</value>
     <comment>AppTopBar Page Navigation Title</comment>
   </data>
   <data name="LanguageComboBox.Description" xml:space="preserve">
@@ -145,51 +145,51 @@
     <comment>Settings ComboBox</comment>
   </data>
   <data name="LanguageComboBox.Header" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
     <comment>Settings ComboBox</comment>
   </data>
   <data name="NavigateAbout.Text" xml:space="preserve">
-    <value>About</value>
+    <value>Über uns</value>
     <comment>AppBottomBar Navigation Button Title</comment>
   </data>
   <data name="NavigateHome.Text" xml:space="preserve">
-    <value>Home</value>
+    <value>Start</value>
     <comment>AppBottomBar Navigation Button Title</comment>
   </data>
   <data name="NavigateProfile.Text" xml:space="preserve">
-    <value>Profile</value>
+    <value>Profil</value>
     <comment>AppBottomBar Navigation Button Title</comment>
   </data>
   <data name="NavigateScoreboard.Text" xml:space="preserve">
-    <value>Scores</value>
+    <value>Punkte</value>
     <comment>AppBottomBar Navigation Button Title</comment>
   </data>
   <data name="NavigateSettings.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Einstellungen</value>
     <comment>AppBottomBar Navigation Button Title</comment>
   </data>
   <data name="PersonalizationTitle.Text" xml:space="preserve">
-    <value>Personalization</value>
+    <value>Personalisierung</value>
     <comment>Settings Title TextBlock</comment>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Profile</value>
+    <value>Profil</value>
     <comment>AppTopBar Page Navigation Title</comment>
   </data>
   <data name="Scoreboard" xml:space="preserve">
-    <value>Scoreboard</value>
+    <value>Bestenliste</value>
     <comment>AppTopBar Page Navigation Title</comment>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Einstellungen</value>
     <comment>AppTopBar Page Navigation Title</comment>
   </data>
   <data name="ThemeComboBox.Description" xml:space="preserve">
-    <value>Restart is required to apply theme.</value>
+    <value>Farbanpassung wird erst nach Neustart angewand.</value>
     <comment>Settings ComboBox</comment>
   </data>
   <data name="ThemeComboBox.Header" xml:space="preserve">
-    <value>Theme</value>
+    <value>Farbe auswählen</value>
     <comment>Settings ComboBox</comment>
   </data>
 </root>

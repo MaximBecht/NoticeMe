@@ -32,7 +32,8 @@ namespace NoticeMe.Pages
 
             this.InitializeComponent();
 
-            themeDropDown.SelectedIndex = SettingsViewModel.SelectedAppThemeIndex;
+            LanguageComboBox.SelectedIndex = SettingsViewModel.SelectedLanguageIndex;
+            ThemeComboBox.SelectedIndex = SettingsViewModel.SelectedAppThemeIndex;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -45,9 +46,14 @@ namespace NoticeMe.Pages
             }
         }
 
+        private void LanguageDropDown_Closed(object sender, object e)
+        {
+            SettingsViewModel.SelectedLanguageIndex = LanguageComboBox.SelectedIndex;
+        }
+
         private void ThemeDropDown_Closed(object sender, object e)
         {
-            SettingsViewModel.SelectedAppThemeIndex = themeDropDown.SelectedIndex;
+            SettingsViewModel.SelectedAppThemeIndex = ThemeComboBox.SelectedIndex;
         }
     }
 }

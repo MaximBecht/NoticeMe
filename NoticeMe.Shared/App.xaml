@@ -161,8 +161,8 @@
                             <SolidColorBrush x:Key="RegionBrush" Color="{StaticResource RegionColor}" />
 
                             <SolidColorBrush x:Key="HomePageBackgroundThemeBrush" Color="#FFE6E6E6"/>
-                            <SolidColorBrush x:Key="HomePageNavigationButtonDefaultColor" Color="#6d6d6d"/>
-                            <SolidColorBrush x:Key="HomePageNavigationButtonHighlightedColor" Color="{ThemeResource SystemAccentColor}"/>
+                            <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
+                            <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
                         </ResourceDictionary>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>

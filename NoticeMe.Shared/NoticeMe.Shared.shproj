@@ -81,6 +81,9 @@
     <_Globbed_Content Remove="Assets\xaml_binding_example.txt" />
   </ItemGroup>
   <ItemGroup>
+    <_Globbed_PRIResource Remove="Strings\de-DE\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
     <_Globbled_Page Remove="Assets\Themes\DarkTheme.xaml" />
     <_Globbled_Page Remove="Assets\Themes\LightTheme.xaml" />
     <_Globbled_Page Remove="Pages\AboutPage.xaml" />
