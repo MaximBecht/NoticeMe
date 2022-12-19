@@ -8,7 +8,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{StaticResource NoticeMe_PrimaryBackgroundColorBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <StackPanel Spacing="10" Margin="20">
@@ -20,23 +20,12 @@
                 <x:String>Italiano</x:String>
                 <x:String>简体中文</x:String>
                 <x:String>日本語</x:String>
-
-                <ComboBox.ItemContainerStyle>
-                    <Style TargetType="ComboBoxItem">
-                        <Setter Property="Foreground" Value="{StaticResource NoticeMe_NormalTextColorBrush}"/>
-                        <Setter Property="Background" Value="{StaticResource NoticeMe_SecondaryBackgroundColorBrush}"/>
-                        <Setter Property="BorderBrush" Value="{StaticResource NoticeMe_DisabledTextColorBrush}"/>
-                    </Style>
-                </ComboBox.ItemContainerStyle>
             </ComboBox>
 
-            <ComboBox x:Name="themeDropDown" Header="Theme" SelectedItem="{x:Bind SettingsViewModel.DisplaySelectedTheme, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed"
-                      Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}" Style="{StaticResource NoticeMe_ComboBoxStyle}">
-                <x:String>System default</x:String>
+            <ComboBox x:Name="themeDropDown" Header="Theme" SelectedItem="{x:Bind SettingsViewModel.DisplaySelectedTheme, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed">
                 <x:String>Light</x:String>
                 <x:String>Dark</x:String>
-                <x:String>High contrast black</x:String>
-                <x:String>High contrast white</x:String>
+                <x:String>System default</x:String>
 
             </ComboBox>
             
@@ -58,14 +47,6 @@
                 <x:String>Futura</x:String>
                 <x:String>Bodoni</x:String>
                 <x:String>Arial</x:String>
-
-                <ComboBox.ItemContainerStyle>
-                    <Style TargetType="ComboBoxItem">
-                        <Setter Property="Foreground" Value="{StaticResource NoticeMe_NormalTextColorBrush}"/>
-                        <Setter Property="Background" Value="{StaticResource NoticeMe_SecondaryBackgroundColorBrush}"/>
-                        <Setter Property="BorderBrush" Value="{StaticResource NoticeMe_DisabledTextColorBrush}"/>
-                    </Style>
-                </ComboBox.ItemContainerStyle>
             </ComboBox>
         </StackPanel>
     </Grid>

@@ -5,19 +5,21 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <Color x:Key="SystemAccentColor">OrangeRed</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="SystemAccentColor">DeepPink</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="SystemAccentColor">OrangeRed</Color>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
-                <!--<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />-->
-                <!-- Add resource dictionaries here -->
-
-                <!--<ResourceDictionary x:Name="FontTheme" Source="Assets/Themes/DefaultFontTheme.xaml"/>-->
-                <ResourceDictionary x:Name="ColorTheme" Source="Assets/Themes/DefaultTheme.xaml"/>
-
-                <!--<ResourceDictionary x:Name="TestControlStyles" Source="Assets/Themes/TestControlStyles.xaml"/>-->
-
+                <!-- Your resources -->
+                <!-- ... -->
             </ResourceDictionary.MergedDictionaries>
-            <!-- Add resources here -->
         </ResourceDictionary>
-        
     </Application.Resources>
-
 </Application>

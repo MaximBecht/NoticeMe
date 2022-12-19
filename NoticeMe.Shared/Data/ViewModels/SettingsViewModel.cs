@@ -1,5 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
 using NoticeMe.Pages;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,6 @@ using Windows.Storage;
 
 namespace NoticeMe.Data.ViewModels
 {
-
-
-    public enum Theme
-    {
-        SystemDefault,
-        Light,
-        Dark,
-        HighContrastBlack,
-        HighContrastWhite,
-        Default
-    }
     public enum Font
     {
         AkzidenzGrotesk,
@@ -52,22 +42,16 @@ namespace NoticeMe.Data.ViewModels
 
     public partial class SettingsViewModel : INotifyPropertyChanged
     {
-        private Theme _selectedTheme = Theme.Default;
-        public Theme SelectedTheme 
+        private ApplicationTheme _selectedAppTheme = Application.Current.RequestedTheme;
+        public ApplicationTheme SelectedAppTheme 
         {
-            get => _selectedTheme;
+            get => _selectedAppTheme;
             set
             {
-                if(value == Theme.Default)
+                if(_selectedAppTheme != value) 
                 {
-                    ChangeTheme(_selectedTheme, (false));
-                    OnPropertyChanged("SelectedTheme");
-                    OnPropertyChanged("DisplaySelectedTheme");
-                }
-                else if (_selectedTheme != value)
-                {
-                    ChangeTheme(value, _selectedTheme != Theme.Default);
-                    _selectedTheme = value;
+                    _selectedAppTheme = value;
+                    ChangeApplicationTheme(_selectedAppTheme);
                     OnPropertyChanged("SelectedTheme");
                     OnPropertyChanged("DisplaySelectedTheme");
                 }
@@ -78,65 +62,19 @@ namespace NoticeMe.Data.ViewModels
         {
             get
             {
-                return SelectedTheme.ToString();
+                return SelectedAppTheme.ToString();
             }
         }
 
 
         public SettingsViewModel() 
         {
-            SetThemeOnStartup();
-        }
-
-        private void ChangeTheme(Theme theme, bool refresh)
-        {
-            switch (theme)
-            {
-                case Theme.Default: ChangeThemeSource("ms-appx:///Assets/Themes/LightTheme.xaml"); break;
-                case Theme.Light: ChangeThemeSource("ms-appx:///Assets/Themes/LightTheme.xaml"); break;
-                case Theme.Dark: ChangeThemeSource("ms-appx:///Assets/Themes/DarkTheme.xaml"); break;
-                case Theme.HighContrastBlack: ChangeThemeSource("ms-appx:///Assets/Themes/DarkTheme.xaml"); break;
-                case Theme.HighContrastWhite: ChangeThemeSource("ms-appx:///Assets/Themes/DarkTheme.xaml"); break;
-            }
-
-            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-            localSettings.Values["AppTheme"] = theme.ToString();
-
-            if (refresh)
-            {
-                RefreshUI();
-            }
-        }
-        private void ChangeThemeSource(string source)
-        {
-            Application.Current.Resources.MergedDictionaries[0].Source = new Uri(source);
-        }
-        private void ChangeFont(Font font)
-        {
 
         }
-        private void SetThemeOnStartup()
-        {
-            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            Theme requestedTheme = Theme.Default;
-            if (localSettings.Values.ContainsKey("AppTheme"))
-            {
-                requestedTheme = ParseEnum<Theme>(localSettings.Values["AppTheme"]);
-            }
 
-            SelectedTheme = requestedTheme;
-        }
-
-        private void RefreshUI()
+        private void ChangeApplicationTheme(ApplicationTheme requestedAppTheme)
         {
-            ((App)Application.Current).RootFrame.Navigate(typeof(MainPage));
-        }
-        private static T ParseEnum<T>(object value)
-        {
-            if (value == null)
-                return default(T);
-            return (T)Enum.Parse(typeof(T), value.ToString());
+            ApplicationData.Current.LocalSettings.Values["AppTheme"] = (int)requestedAppTheme;
         }
 
 

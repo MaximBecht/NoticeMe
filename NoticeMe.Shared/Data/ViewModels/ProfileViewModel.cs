@@ -202,7 +202,7 @@ namespace NoticeMe.Data.ViewModels
 
         public ProfileViewModel()
         {
-            LoadProfileImage();
+            //LoadProfileImage();
         }
 
         public void OpenEditPageButton(object sender, RoutedEventArgs e)

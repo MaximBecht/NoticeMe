@@ -8,14 +8,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{StaticResource NoticeMe_PrimaryBackgroundColorBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <ListView x:Name="IoTDeviceList"
             Height="auto"
             MinWidth="550"
             BorderThickness="1"
-            BorderBrush="{StaticResource NoticeMe_SecondaryBackgroundColorBrush}"
             ItemsSource="{x:Bind HomeViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
 
             <ListView.ItemTemplate>
@@ -31,28 +30,28 @@
                         <StackPanel Margin="12,0,0,0" Grid.Column="1" >
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="18" FontWeight="SemiBold" 
-                                           Style="{ThemeResource BaseTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"
+                                           Style="{ThemeResource BaseTextBlockStyle}"
                                            LineHeight="20" Margin="0,0,6,0"/>
 
                                 <Ellipse Width="6" Height="6" Fill="{x:Bind Status.DisplayStatusColor}"/>
 
                                 <TextBlock Text="{x:Bind Status.DisplayStatus, Mode=OneWay}" FontSize="16" FontWeight="Thin" 
-                                           Style="{ThemeResource BaseTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"
+                                           Style="{ThemeResource BaseTextBlockStyle}"
                                            VerticalAlignment="Center" Margin="6,0,0,0" LineHeight="20"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                                 <TextBlock Text="Keystrokes: " FontSize="14" FontWeight="Bold" Margin="16,0,6,0" Width="100"
-                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                                           Style="{ThemeResource CaptionTextBlockStyle}"/>
                                 <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" FontSize="14" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Right"
-                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                                           Style="{ThemeResource CaptionTextBlockStyle}"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Typing Speed: " FontSize="14" FontWeight="Bold" Margin="16,0,6,0" Width="100"
-                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                                           Style="{ThemeResource CaptionTextBlockStyle}"/>
                                 <TextBlock Text="{x:Bind TypingSpeed, Mode=OneWay}" FontSize="14" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Right"
-                                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource NoticeMe_NormalTextColorBrush}"/>
+                                           Style="{ThemeResource CaptionTextBlockStyle}"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>

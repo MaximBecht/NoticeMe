@@ -42,8 +42,20 @@ namespace NoticeMe
 #if HAS_UNO || NETFX_CORE
             this.Suspending += OnSuspending;
 #endif
+
+            SetThemeOnStartup();
         }
 
+        private void SetThemeOnStartup()
+        {
+            ApplicationTheme requestedTheme = ApplicationTheme.Dark;
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("AppTheme"))
+            {
+                requestedTheme = (ApplicationTheme)(int)ApplicationData.Current.LocalSettings.Values["AppTheme"];
+            }
+
+            App.Current.RequestedTheme = requestedTheme;
+        }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

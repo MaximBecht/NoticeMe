@@ -7,6 +7,7 @@ using NoticeMe.Pages;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Windows.UI;
 
 namespace NoticeMe
 {
@@ -94,16 +95,30 @@ namespace NoticeMe
 
             if (_lastActiveIcon != null)
             {
-                _lastActiveIcon.Foreground = Application.Current.Resources["NoticeMe_DisabledButtonIconColorBrush"] as Brush;
-                _lastActiveText.Foreground = Application.Current.Resources["NoticeMe_DisabledTextColorBrush"] as Brush;
+                var color = Application.Current.Resources["SystemColorDisabledTextBrush"];
+                SolidColorBrush colorBrush = GetColorFromHex(color.ToString());
+                _lastActiveIcon.Foreground = colorBrush;
+                _lastActiveText.Foreground = colorBrush;
             }
             if (icon.Count > 0 && text.Count > 0)
             {
                 _lastActiveIcon = icon[0];
                 _lastActiveText = text[0];
-                icon[0].Foreground = Application.Current.Resources["NoticeMe_SelectedButtonIconColorBrush"] as Brush;
-                text[0].Foreground = Application.Current.Resources["NoticeMe_SelectedTextColorBrush"] as Brush;
+                var color = Application.Current.Resources["SystemAccentColor"];
+                SolidColorBrush colorBrush = GetColorFromHex(color.ToString());
+                icon[0].Foreground = colorBrush;
+                text[0].Foreground = colorBrush;
             }
+        }
+        private static SolidColorBrush GetColorFromHex(string hexaColor)
+        {
+            return new SolidColorBrush(
+                Color.FromArgb(
+                Convert.ToByte(hexaColor.Substring(1, 2), 16),
+                Convert.ToByte(hexaColor.Substring(3, 2), 16),
+                Convert.ToByte(hexaColor.Substring(5, 2), 16),
+                Convert.ToByte(hexaColor.Substring(7, 2), 16)
+            ));
         }
 
         public static object GetViewModel(string pageTitle)
