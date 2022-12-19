@@ -15,7 +15,7 @@
 
             <TextBlock x:Uid="GeneralTitle" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,16,0,0"/>
 
-            <ComboBox x:Uid="LanguageComboBox" x:Name="LanguageComboBox" MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedLanguageIndex, Mode=OneWay}" DropDownClosed="LanguageDropDown_Closed">
+            <ComboBox x:Uid="LanguageComboBox" x:Name="LanguageComboBox" Header="Test" Description="Test" MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedLanguageIndex, Mode=OneWay}" DropDownClosed="LanguageDropDown_Closed">
                 <x:String>English</x:String>
                 <x:String>Deutsch</x:String>
                 <!--<x:String>Español</x:String>
@@ -27,14 +27,13 @@
 
             <TextBlock x:Uid="PersonalizationTitle" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,16,0,0"/>
 
-            <ComboBox x:Uid="ThemeComboBox" x:Name="ThemeComboBox" MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedAppThemeIndex, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed">
+            <ComboBox x:Uid="ThemeComboBox" x:Name="ThemeComboBox" Header="Test" Description="Test"  MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedAppThemeIndex, Mode=OneWay}" DropDownClosed="ThemeDropDown_Closed">
                 <x:String>Light</x:String>
                 <x:String>Dark</x:String>
                 <x:String>System default</x:String>
-
             </ComboBox>
 
-            <ComboBox x:Uid="FontComboBox" MinWidth="250" MaxDropDownHeight="400">
+            <ComboBox x:Uid="FontComboBox" Header="Test" Description="Test" MinWidth="250" MaxDropDownHeight="400">
                 <x:String>Akzidenz Grotesk</x:String>
                 <x:String>Helvetica</x:String>
                 <x:String>Didot</x:String>
