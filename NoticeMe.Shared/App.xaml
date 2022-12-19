@@ -45,10 +45,10 @@
                             <Color x:Key="SystemChromeAltHighColor">#FF333333</Color>
                             <Color x:Key="SystemRevealListLowColor">#FF1D1D1D</Color>
                             <Color x:Key="SystemRevealListMediumColor">#FF333333</Color>
-                            <!-- Override system shape defaults -->
+                            <!--Override system shape defaults-->
                             <CornerRadius x:Key="ControlCornerRadius">2,2,2,2</CornerRadius>
                             <CornerRadius x:Key="OverlayCornerRadius">4,4,4,4</CornerRadius>
-                            <!-- Override system borders -->
+                            <!--Override system borders-->
                             <Thickness x:Key="MenuBarItemBorderThickness">1,1,1,1</Thickness>
                             <Thickness x:Key="GridViewItemMultiselectBorderThickness">1,1,1,1</Thickness>
                             <Thickness x:Key="CheckBoxBorderThemeThickness">1</Thickness>
@@ -73,7 +73,7 @@
                             <Thickness x:Key="GridViewItemRevealBorderThemeThickness">1,1,1,1</Thickness>
                             <Thickness x:Key="ComboBoxItemRevealBorderThemeThickness">1,1,1,1</Thickness>
                             <x:Double x:Key="PersonPictureEllipseBadgeStrokeThickness">1</x:Double>
-                            <!-- Override system generated accent colors -->
+                            <!--Override system generated accent colors-->
                             <Color x:Key="SystemAccentColorDark1">#FF1D85D7</Color>
                             <Color x:Key="SystemAccentColorDark2">#FF3B97DF</Color>
                             <Color x:Key="SystemAccentColorDark3">#FF58A8E8</Color>
@@ -84,6 +84,8 @@
                             <SolidColorBrush x:Key="RegionBrush" Color="{StaticResource RegionColor}" />
 
                             <SolidColorBrush x:Key="HomePageBackgroundThemeBrush" Color="#FF1D1D1D"/>
+                            <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
+                            <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
                         </ResourceDictionary>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
@@ -121,10 +123,10 @@
                             <Color x:Key="SystemChromeAltHighColor">#FFCCCCCC</Color>
                             <Color x:Key="SystemRevealListLowColor">#FFE6E6E6</Color>
                             <Color x:Key="SystemRevealListMediumColor">#FFCCCCCC</Color>
-                            <!-- Override system shape defaults -->
+                             <!--Override system shape defaults--> 
                             <CornerRadius x:Key="ControlCornerRadius">2,2,2,2</CornerRadius>
                             <CornerRadius x:Key="OverlayCornerRadius">4,4,4,4</CornerRadius>
-                            <!-- Override system borders -->
+                             <!--Override system borders--> 
                             <Thickness x:Key="MenuBarItemBorderThickness">1,1,1,1</Thickness>
                             <Thickness x:Key="GridViewItemMultiselectBorderThickness">1,1,1,1</Thickness>
                             <Thickness x:Key="CheckBoxBorderThemeThickness">1</Thickness>
@@ -149,7 +151,7 @@
                             <Thickness x:Key="GridViewItemRevealBorderThemeThickness">1,1,1,1</Thickness>
                             <Thickness x:Key="ComboBoxItemRevealBorderThemeThickness">1,1,1,1</Thickness>
                             <x:Double x:Key="PersonPictureEllipseBadgeStrokeThickness">1</x:Double>
-                            <!-- Override system generated accent colors -->
+                             <!--Override system generated accent colors--> 
                             <Color x:Key="SystemAccentColorLight1">#FF1D85D7</Color>
                             <Color x:Key="SystemAccentColorLight2">#FF3B97DF</Color>
                             <Color x:Key="SystemAccentColorLight3">#FF58A8E8</Color>
@@ -159,6 +161,8 @@
                             <SolidColorBrush x:Key="RegionBrush" Color="{StaticResource RegionColor}" />
 
                             <SolidColorBrush x:Key="HomePageBackgroundThemeBrush" Color="#FFE6E6E6"/>
+                            <SolidColorBrush x:Key="HomePageNavigationButtonDefaultColor" Color="#6d6d6d"/>
+                            <SolidColorBrush x:Key="HomePageNavigationButtonHighlightedColor" Color="{ThemeResource SystemAccentColor}"/>
                         </ResourceDictionary>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>

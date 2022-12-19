@@ -94,19 +94,19 @@ namespace NoticeMe
 
         private static void SetButtonVisualState(BitmapIcon icon, TextBlock text)
         {
+            SolidColorBrush colorBrush = new SolidColorBrush();
             if (_lastActiveIcon != null && _lastActiveText != null)
             {
-                var colorBrush = (SolidColorBrush)Application.Current.Resources["SystemColorDisabledTextBrush"];
+                colorBrush = (SolidColorBrush)Application.Current.Resources["HomePageNavigationButtonDefaultThemeBrush"];
                 _lastActiveIcon.Foreground = colorBrush;
                 _lastActiveText.Foreground = colorBrush;
             }
 
             _lastActiveIcon = icon;
             _lastActiveText = text;
-            var color = (Color)Application.Current.Resources["SystemAccentColor"];
-            SolidColorBrush brush = new SolidColorBrush(color);
-            icon.Foreground = brush;
-            text.Foreground = brush;
+            colorBrush = (SolidColorBrush)Application.Current.Resources["HomePageNavigationButtonHighlightThemeBrush"];
+            icon.Foreground = colorBrush;
+            text.Foreground = colorBrush;
         }
 
         public static object GetViewModel(string pageTitle)

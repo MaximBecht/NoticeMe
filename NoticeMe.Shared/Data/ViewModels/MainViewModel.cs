@@ -57,7 +57,7 @@ namespace NoticeMe.Data.ViewModels
 
         public MainViewModel()
         {
-            UserList = DataManager.GetUserDataAsUserVMCollection();
+
         }
 
         public void ChangePageTitle(string title)
@@ -67,11 +67,6 @@ namespace NoticeMe.Data.ViewModels
         public string GetCurrentPageTitle()
         {
             return ActivePageTitle;
-        }
-
-        public void SaveUserData_ButtonClick(object sender, RoutedEventArgs e)
-        {
-            DataManager.SetUserData(UserList);
         }
     }
 }

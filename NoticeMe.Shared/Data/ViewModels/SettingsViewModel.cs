@@ -69,7 +69,14 @@ namespace NoticeMe.Data.ViewModels
 
         public SettingsViewModel() 
         {
-            SelectedAppThemeIndex = (int)ApplicationData.Current.LocalSettings.Values["AppTheme"];
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("AppTheme"))
+            {
+                SelectedAppThemeIndex = (int)ApplicationData.Current.LocalSettings.Values["AppTheme"];
+            }
+            else
+            {
+                SelectedAppThemeIndex = 2;
+            }
         }
 
         private void ChangeApplicationTheme(int requestedAppThemeIndex)

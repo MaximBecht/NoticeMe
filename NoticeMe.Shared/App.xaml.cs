@@ -67,9 +67,6 @@ namespace NoticeMe
         /// <param name="args">Details about the launch request and process.</param>
         protected override async void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            await DataManager.LoadAllDataAsync();
-            DataManager.InitAutoSaver();
-
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -141,7 +138,6 @@ namespace NoticeMe
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
-            await DataManager.SaveAllDataAsync();
 
             deferral.Complete();
         }

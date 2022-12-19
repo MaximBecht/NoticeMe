@@ -53,32 +53,32 @@
 
             <Button x:Name="NavigateScoreboardBtn" Click="NavigationButton_Click" Grid.Column="0"  Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_leaderboard_64px.png" Foreground="{ThemeResource SystemColorDisabledTextBrush}"/>
-                    <TextBlock FontSize="12" Foreground="{ThemeResource SystemColorDisabledTextBrush}" Text="Scores" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_leaderboard_64px.png" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}" Text="Scores" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
             <Button x:Name="NavigateProfileBtn" Click="NavigationButton_Click" Grid.Column="1"  Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_account_64px.png" Foreground="{ThemeResource SystemColorDisabledTextBrush}"/>
-                    <TextBlock FontSize="12" Foreground="{ThemeResource SystemColorDisabledTextBrush}" Text="Profile" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_account_64px.png" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}" Text="Profile" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
             <Button x:Name="NavigateHomeBtn" Click="NavigationButton_Click" Grid.Column="2"  Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon x:Name="NavigateHomeIcon" Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="{ThemeResource SystemAccentColor}"/>
-                    <TextBlock x:Name="NavigateHomeText" FontSize="12" Foreground="{ThemeResource SystemAccentColor}" Text="Home" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon x:Name="NavigateHomeIcon" Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_home_64px.png" Foreground="{ThemeResource HomePageNavigationButtonHighlightThemeBrush}"/>
+                    <TextBlock x:Name="NavigateHomeText" FontSize="12" Foreground="{ThemeResource HomePageNavigationButtonHighlightThemeBrush}" Text="Home" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
             <Button x:Name="NavigateSettingsBtn" Click="NavigationButton_Click" Grid.Column="3"  Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_settings_64px.png" Foreground="{ThemeResource SystemColorDisabledTextBrush}"/>
-                    <TextBlock FontSize="12" Foreground="{ThemeResource SystemColorDisabledTextBrush}" Text="Settings" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_settings_64px.png" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}" Text="Settings" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
             <Button x:Name="NavigateAboutBtn" Click="NavigationButton_Click" Grid.Column="4" Background="{ThemeResource SystemControlTransparentBrush}" BorderThickness="0" CornerRadius="32" HorizontalAlignment="Stretch">
                 <StackPanel>
-                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_about_64px.png" Foreground="{ThemeResource SystemColorDisabledTextBrush}"/>
-                    <TextBlock FontSize="12" Foreground="{ThemeResource SystemColorDisabledTextBrush}" Text="About" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                    <BitmapIcon Width="24" Height="24" UriSource="ms-appx:///Assets/Images/icon_material_about_64px.png" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}"/>
+                    <TextBlock FontSize="12" Foreground="{ThemeResource HomePageNavigationButtonDefaultThemeBrush}" Text="About" HorizontalAlignment="Center" Margin="0,0,0,12"/>
                 </StackPanel>
             </Button>
         </Grid>

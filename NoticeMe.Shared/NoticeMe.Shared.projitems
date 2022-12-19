@@ -18,10 +18,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Data\DataManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\IoTDevice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataModels\UserData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Data\ObjectSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\HomeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ProfileViewModel.cs" />
