@@ -125,7 +125,8 @@
     <value>NoticeMe</value>
   </data>
   <data name="FontComboBox.Description" xml:space="preserve">
-    <value>General font used. Requires app restart to apply.</value>
+    <value>General font used.
+Requires app restart to apply.</value>
     <comment>Settings ComboBox</comment>
   </data>
   <data name="FontComboBox.Header" xml:space="preserve">
@@ -191,5 +192,17 @@
   <data name="ThemeComboBox.Header" xml:space="preserve">
     <value>Theme</value>
     <comment>Settings ComboBox</comment>
+  </data>
+  <data name="ThemeComboBox_Dark" xml:space="preserve">
+    <value>Dark</value>
+    <comment>Settings ComboBox Option</comment>
+  </data>
+  <data name="ThemeComboBox_Light" xml:space="preserve">
+    <value>Light</value>
+    <comment>Settings ComboBox Option</comment>
+  </data>
+  <data name="ThemeComboBox_SystemDefault" xml:space="preserve">
+    <value>System default</value>
+    <comment>Settings ComboBox Option</comment>
   </data>
 </root>

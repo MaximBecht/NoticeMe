@@ -8,7 +8,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource HomePageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <ListView x:Name="IoTDeviceList"
@@ -25,7 +25,7 @@
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" MinHeight="25" MaxHeight="100" Stretch="Fill"/>
+                        <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" MinHeight="25" MaxHeight="100"/>
 
                         <StackPanel Margin="12,0,0,0" Grid.Column="1" >
                             <StackPanel Orientation="Horizontal">

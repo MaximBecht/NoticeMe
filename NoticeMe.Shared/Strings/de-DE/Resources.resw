@@ -125,7 +125,8 @@
     <value>NoticeMe</value>
   </data>
   <data name="FontComboBox.Description" xml:space="preserve">
-    <value>Anwendungsweit genutzte Schriftart. Änderungen werden erst nach Neustart angewand.</value>
+    <value>Anwendungsweit genutzte Schriftart.
+Änderung wird erst nach Neustart angewand.</value>
     <comment>Settings ComboBox</comment>
   </data>
   <data name="FontComboBox.Header" xml:space="preserve">
@@ -191,5 +192,17 @@
   <data name="ThemeComboBox.Header" xml:space="preserve">
     <value>Farbe auswählen</value>
     <comment>Settings ComboBox</comment>
+  </data>
+  <data name="ThemeComboBox_Dark" xml:space="preserve">
+    <value>Dunkel</value>
+    <comment>Settings ComboBox Option</comment>
+  </data>
+  <data name="ThemeComboBox_Light" xml:space="preserve">
+    <value>Hell</value>
+    <comment>Settings ComboBox Option</comment>
+  </data>
+  <data name="ThemeComboBox_SystemDefault" xml:space="preserve">
+    <value>Geräte Standard</value>
+    <comment>Settings ComboBox Option</comment>
   </data>
 </root>

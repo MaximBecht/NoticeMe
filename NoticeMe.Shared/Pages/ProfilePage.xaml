@@ -9,16 +9,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <!--<Page.Resources>
-        <t:BoolToVisibilityConverter x:Key="BoolToVisibility" />
-    </Page.Resources>
-
     <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                   VerticalScrollBarVisibility="Auto">
         <StackPanel>
-            <PersonPicture Margin="0,50,0,0" Width="160" Height="160"
-                           DisplayName="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}"
-                           ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"/>
+            <PersonPicture Margin="0,50,0,0" Width="160" Height="160" ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"/>
+
+
+
+            <!--ProfilePicture="{x:Bind ProfileViewModel.ProfileImage, Mode=OneWay}"-->
+            <TextBlock Text="User Information" Style="{ThemeResource HeaderTextBlockStyle}" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,64,0,12"/>
             <TextBlock Margin="0,5,0,5" Text="{x:Bind ProfileViewModel.UserName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Margin="0,5,0,5" Text="{x:Bind ProfileViewModel.DisplayName, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Margin="0,5,0,40" Text="{x:Bind ProfileViewModel.Email, Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
@@ -33,6 +32,8 @@
                     <TextBlock FontSize="12" Text="Edit Profile" HorizontalAlignment="Center" Margin="0,2,0,5"/>
                 </StackPanel>
             </Button>
+
+            <TextBlock Text="User not logged in" Foreground="Red" HorizontalAlignment="Center" TextAlignment="Center"/>
         </StackPanel>
-    </ScrollViewer>-->
+    </ScrollViewer>
 </Page>
