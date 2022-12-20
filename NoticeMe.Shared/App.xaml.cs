@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.UI;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
@@ -13,6 +15,7 @@ using Windows.ApplicationModel.Core;
 using Windows.Globalization;
 using Windows.Storage;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 
 namespace NoticeMe
 {

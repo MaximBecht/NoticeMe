@@ -11,12 +11,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{x:Bind MainViewModel}">
 
+    
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="56"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="56"/>
         </Grid.RowDefinitions>
+
 
         <!--TopBar: can later be used, if needed-->
         <Grid x:Name="AppTopBar" Grid.Row="0" Background="{ThemeResource AppBarBackgroundThemeBrush}">
