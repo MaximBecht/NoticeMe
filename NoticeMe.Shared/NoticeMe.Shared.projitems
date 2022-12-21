@@ -84,14 +84,21 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1_white.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook_logo_2428.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\instagram-logo-2433.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\instagram_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\linkedin-logo-2430.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\linkedin_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\reddit-logo-2436.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\reddit_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\tiktok-logo-4500.svg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\tiktok_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\twitter-logo-2429.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\twitter_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\youtube-logo-2431.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\youtube_logo_256.png" />
     <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
   </ItemGroup>
   <ItemGroup>
