@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="About Page"/>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" FlowDirection="LeftToRight" Orientation="Horizontal" Padding="16">
+            <Image Height="64" Width="64"  Source="{ThemeResource AppLogo}"/>
+            <TextBlock Text="NoticeMe™ &amp; ©2022 The NoticeMeGroup Inc." VerticalAlignment="Center" Padding="16"/>
+        </StackPanel>
     </Grid>
 </Page>

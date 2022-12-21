@@ -90,6 +90,7 @@
 
                                     <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
                                     <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
+                                    <ImageSource x:Key="AppLogo">/Assets/Images/Logo_V1_white.svg</ImageSource>
                                 </ResourceDictionary>
                             </ResourceDictionary.MergedDictionaries>
                         </ResourceDictionary>
@@ -166,6 +167,7 @@
 
                                     <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
                                     <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
+                                    <ImageSource x:Key="AppLogo">/Assets/Images/Logo_V1.svg</ImageSource>
                                 </ResourceDictionary>
                             </ResourceDictionary.MergedDictionaries>
                         </ResourceDictionary>

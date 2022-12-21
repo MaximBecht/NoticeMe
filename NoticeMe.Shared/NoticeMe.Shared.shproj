@@ -72,6 +72,8 @@
     <_Globbed_Content Remove="Assets\Images\icon_material_left_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_material_settings_64px.png" />
     <_Globbed_Content Remove="Assets\Images\icon_particle_photon_600px.jpg" />
+    <_Globbed_Content Remove="Assets\Images\Logo_V1.svg" />
+    <_Globbed_Content Remove="Assets\Images\Logo_V1_white.svg" />
     <_Globbed_Content Remove="Assets\Status\afk.txt" />
     <_Globbed_Content Remove="Assets\Status\offline.txt" />
     <_Globbed_Content Remove="Assets\Status\online.txt" />
