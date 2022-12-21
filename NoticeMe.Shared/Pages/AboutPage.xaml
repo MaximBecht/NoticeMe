@@ -10,58 +10,78 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="512"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Here comes our short summary!"/>
 
 
-        <Grid x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="256">
+        <Grid x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Grid.Resources >
                 <Style TargetType="Border" >
-                    <Setter Property="Padding" Value="5,5,5,5" />
+                    <Setter Property="Padding" Value="2,2,2,2" />
                 </Style>
             </Grid.Resources>
             
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="74"/>
-                <ColumnDefinition Width="74"/>
-                <ColumnDefinition Width="74"/>
-                <ColumnDefinition Width="74"/>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="64"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="74"/>
-                <RowDefinition Height="74"/>
+                <RowDefinition Height="64"/>
+                <RowDefinition Height="64"/>
             </Grid.RowDefinitions>
 
             <Border>
-                <Image Source="{ThemeResource FacebookLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.facebook.com/">
+                    <Image Source="{ThemeResource FacebookLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
             <Border Grid.Column="1">
-                <Image Source="{ThemeResource InstagramLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.instagram.com/">
+                    <Image Source="{ThemeResource InstagramLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
             <Border Grid.Column="2">
-                <Image Source="{ThemeResource LinkedInLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://de.linkedin.com/">
+                    <Image Source="{ThemeResource LinkedInLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
             <Border Grid.Column="3">
-                <Image Source="{ThemeResource RedditLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.reddit.com/">
+                    <Image Source="{ThemeResource RedditLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
             <Border Grid.Row="1">
-                <Image Source="{ThemeResource TiktokLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.tiktok.com/">
+                    <Image Source="{ThemeResource TiktokLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
             <Border Grid.Row="1" Grid.Column="1">
-                <Image Source="{ThemeResource TwitterLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://twitter.com/">
+                    <Image Source="{ThemeResource TwitterLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
             <Border Grid.Row="1" Grid.Column="2">
-                <Image Source="{ThemeResource YoutubeLogo}"/>
+                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.youtube.com/">
+                    <Image Source="{ThemeResource YoutubeLogo}" Stretch="Uniform"/>
+                </HyperlinkButton>
             </Border>
         </Grid>
-        
-        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FlowDirection="LeftToRight" Orientation="Horizontal" Padding="16">
-            <Image Height="64" Width="64"  Source="{ThemeResource AppLogo}"/>
-            <TextBlock Text="NoticeMe™ &amp; ©2022 The NoticeMeGroup Inc." VerticalAlignment="Center" Padding="16"/>
+
+        <StackPanel  Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" Padding="16">
+                <Image Height="64" Width="64"  Source="{ThemeResource AppLogo}"/>
+                <TextBlock Text="NoticeMe™ &amp; ©2022 The NoticeMeGroup Inc." VerticalAlignment="Center" Padding="16"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Padding="18">
+                <HyperlinkButton Content="Iconpacks" NavigateUri="https://iconpacks.net/?utm_source=link-attribution&amp;utm_content=2431"/>
+                <HyperlinkButton Content="icons8" NavigateUri="https://icons8.de" Padding="16"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
