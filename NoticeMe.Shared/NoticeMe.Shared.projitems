@@ -83,6 +83,15 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1_white.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook-logo-2428.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\instagram-logo-2433.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\linkedin-logo-2430.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\reddit-logo-2436.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\tiktok-logo-4500.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\twitter-logo-2429.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\youtube-logo-2431.svg" />
     <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
   </ItemGroup>
   <ItemGroup>

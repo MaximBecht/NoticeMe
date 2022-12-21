@@ -74,6 +74,13 @@
     <_Globbed_Content Remove="Assets\Images\icon_particle_photon_600px.jpg" />
     <_Globbed_Content Remove="Assets\Images\Logo_V1.svg" />
     <_Globbed_Content Remove="Assets\Images\Logo_V1_white.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\facebook-logo-2428.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\instagram-logo-2433.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\linkedin-logo-2430.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\reddit-logo-2436.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\tiktok-logo-4500.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\twitter-logo-2429.svg" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\youtube-logo-2431.svg" />
     <_Globbed_Content Remove="Assets\Status\afk.txt" />
     <_Globbed_Content Remove="Assets\Status\offline.txt" />
     <_Globbed_Content Remove="Assets\Status\online.txt" />

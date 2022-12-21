@@ -9,7 +9,57 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" FlowDirection="LeftToRight" Orientation="Horizontal" Padding="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="512"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Here comes our short summary!"/>
+
+
+        <Grid x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="256">
+            <Grid.Resources >
+                <Style TargetType="Border" >
+                    <Setter Property="Padding" Value="5,5,5,5" />
+                </Style>
+            </Grid.Resources>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="74"/>
+                <ColumnDefinition Width="74"/>
+                <ColumnDefinition Width="74"/>
+                <ColumnDefinition Width="74"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="74"/>
+                <RowDefinition Height="74"/>
+            </Grid.RowDefinitions>
+
+            <Border>
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/facebook-logo-2428.svg"/>
+            </Border>
+            <Border Grid.Column="1">
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/instagram-logo-2433.svg"/>
+            </Border>
+            <Border Grid.Column="2">
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/linkedin-logo-2430.svg"/>
+            </Border>
+            <Border Grid.Column="3">
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/reddit-logo-2436.svg"/>
+            </Border>
+            <Border Grid.Row="1">
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/tiktok-logo-4500.svg"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1">
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/twitter-logo-2429.svg"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2">
+                <Image Source="ms-appx:///Assets/Images/OtherBrands/youtube-logo-2431.svg"/>
+            </Border>
+        </Grid>
+        
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FlowDirection="LeftToRight" Orientation="Horizontal" Padding="16">
             <Image Height="64" Width="64"  Source="{ThemeResource AppLogo}"/>
             <TextBlock Text="NoticeMe™ &amp; ©2022 The NoticeMeGroup Inc." VerticalAlignment="Center" Padding="16"/>
         </StackPanel>
