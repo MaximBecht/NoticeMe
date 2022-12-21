@@ -83,7 +83,7 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1_white.svg" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook-logo-2428.svg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook_logo_2428.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\instagram-logo-2433.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\linkedin-logo-2430.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\reddit-logo-2436.svg" />

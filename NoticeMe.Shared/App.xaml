@@ -91,6 +91,14 @@
                                     <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
                                     <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
                                     <ImageSource x:Key="AppLogo">/Assets/Images/Logo_V1_white.svg</ImageSource>
+
+                                    <ImageSource x:Key="FacebookLogo">/Assets/Images/OtherBrands/facebook-logo-2428.svg</ImageSource>
+                                    <ImageSource x:Key="InstagramLogo">/Assets/Images/OtherBrands/instagram-logo-2433.svg</ImageSource>
+                                    <ImageSource x:Key="LinkedInLogo">/Assets/Images/OtherBrands/linkedin-logo-2430.svg</ImageSource>
+                                    <ImageSource x:Key="RedditLogo">/Assets/Images/OtherBrands/reddit-logo-2436.svg</ImageSource>
+                                    <ImageSource x:Key="TiktokLogo">/Assets/Images/OtherBrands/tiktok-logo-4500.svg</ImageSource>
+                                    <ImageSource x:Key="TwitterLogo">/Assets/Images/OtherBrands/twitter-logo-2429.svg</ImageSource>
+                                    <ImageSource x:Key="YoutubeLogo">/Assets/Images/OtherBrands/youtube-logo-2431.svg</ImageSource>
                                 </ResourceDictionary>
                             </ResourceDictionary.MergedDictionaries>
                         </ResourceDictionary>
@@ -168,6 +176,14 @@
                                     <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
                                     <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
                                     <ImageSource x:Key="AppLogo">/Assets/Images/Logo_V1.svg</ImageSource>
+
+                                    <ImageSource x:Key="FacebookLogo">/Assets/Images/OtherBrands/facebook_logo_2428.svg</ImageSource>
+                                    <ImageSource x:Key="InstagramLogo">/Assets/Images/OtherBrands/instagram-logo-2433.svg</ImageSource>
+                                    <ImageSource x:Key="LinkedInLogo">/Assets/Images/OtherBrands/linkedin-logo-2430.svg</ImageSource>
+                                    <ImageSource x:Key="RedditLogo">/Assets/Images/OtherBrands/reddit-logo-2436.svg</ImageSource>
+                                    <ImageSource x:Key="TiktokLogo">/Assets/Images/OtherBrands/tiktok-logo-4500.svg</ImageSource>
+                                    <ImageSource x:Key="TwitterLogo">/Assets/Images/OtherBrands/twitter-logo-2429.svg</ImageSource>
+                                    <ImageSource x:Key="YoutubeLogo">/Assets/Images/OtherBrands/youtube-logo-2431.svg</ImageSource>
                                 </ResourceDictionary>
                             </ResourceDictionary.MergedDictionaries>
                         </ResourceDictionary>

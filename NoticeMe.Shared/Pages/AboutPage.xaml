@@ -37,25 +37,25 @@
             </Grid.RowDefinitions>
 
             <Border>
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/facebook-logo-2428.svg"/>
+                <Image Source="{ThemeResource FacebookLogo}"/>
             </Border>
             <Border Grid.Column="1">
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/instagram-logo-2433.svg"/>
+                <Image Source="{ThemeResource InstagramLogo}"/>
             </Border>
             <Border Grid.Column="2">
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/linkedin-logo-2430.svg"/>
+                <Image Source="{ThemeResource LinkedInLogo}"/>
             </Border>
             <Border Grid.Column="3">
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/reddit-logo-2436.svg"/>
+                <Image Source="{ThemeResource RedditLogo}"/>
             </Border>
             <Border Grid.Row="1">
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/tiktok-logo-4500.svg"/>
+                <Image Source="{ThemeResource TiktokLogo}"/>
             </Border>
             <Border Grid.Row="1" Grid.Column="1">
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/twitter-logo-2429.svg"/>
+                <Image Source="{ThemeResource TwitterLogo}"/>
             </Border>
             <Border Grid.Row="1" Grid.Column="2">
-                <Image Source="ms-appx:///Assets/Images/OtherBrands/youtube-logo-2431.svg"/>
+                <Image Source="{ThemeResource YoutubeLogo}"/>
             </Border>
         </Grid>
         
