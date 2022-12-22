@@ -15,12 +15,14 @@ namespace NoticeMe.Data.ViewModels
     {
         private int _id;
         private string _userName;
+        private string _deviceName;
         private string _firstName;
         private string _lastName;
         private string _email;
         private BitmapImage _profileImage;
 
         private string _editedUserName;
+        private string _editedDeviceName;
         private string _editedFirstName;
         private string _editedLastName;
         private string _editedEmail;
@@ -52,6 +54,23 @@ namespace NoticeMe.Data.ViewModels
                 {
                     _userName = value;
                     OnPropertyChanged("UserName");
+                }
+            }
+        }
+        public string DeviceName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_deviceName))
+                    return "Device Name not set";
+                return _deviceName;
+            }
+            set
+            {
+                if (_deviceName != value)
+                {
+                    _deviceName = value;
+                    OnPropertyChanged("DeviceName");
                 }
             }
         }
@@ -135,6 +154,18 @@ namespace NoticeMe.Data.ViewModels
                 {
                     _editedUserName = value;
                     OnPropertyChanged("EditedUserName");
+                }
+            }
+        }
+        public string EditedDeviceName
+        {
+            get => _editedDeviceName;
+            set
+            {
+                if (_editedDeviceName != value)
+                {
+                    _editedDeviceName = value;
+                    OnPropertyChanged("EditedDeviceName");
                 }
             }
         }

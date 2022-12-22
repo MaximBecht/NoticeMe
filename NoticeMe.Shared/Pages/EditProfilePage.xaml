@@ -11,7 +11,7 @@
     <ScrollViewer>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="42"/>
+                <RowDefinition Height="52"/>
                 <RowDefinition Height="140"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
@@ -20,11 +20,12 @@
             <Button Grid.Row="0" 
                     HorizontalAlignment="Left" VerticalAlignment="Center"
                     Height="32" Width="64"
-                    Background="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}"
+                    Margin="10,0,0,0"
+                    Background="{ThemeResource SystemAccentColorDark1}"
                     Click="{x:Bind ProfileViewModel.Close_EditProfilePage_ButtonClick}">
                 
                 <BitmapIcon UriSource="ms-appx:///Assets/Images/icon_material_left_64px.png" 
-                            Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"
+                            Foreground="{ThemeResource SystemBaseHighColor}"
                             VerticalAlignment="Center" HorizontalAlignment="Center"
                             Height="24" Width="24"/>
             </Button>
@@ -37,33 +38,44 @@
 
                 <Button Click="{x:Bind OpenFilePicker}" 
                         HorizontalAlignment="Right" VerticalAlignment="Bottom" 
-                        Background="{ThemeResource NoticeMe_SelectedButtonIconColorBrush}"
+                        Background="{ThemeResource SystemAccentColorDark1}"
                         Height="56" Width="56"
                         CornerRadius="32">
-                    <BitmapIcon Height="24" Width="24" UriSource="ms-appx:///Assets/Images/icon_material_edit_64px.png" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
+                    <BitmapIcon Height="24" Width="24" UriSource="ms-appx:///Assets/Images/icon_material_edit_64px.png" Foreground="{ThemeResource SystemBaseHighColor}"/>
                 </Button>
             </Grid>
 
-            <StackPanel Grid.Row="2" MaxWidth="600" MinWidth="200" VerticalAlignment="Center">
-                <TextBlock Text="Username" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
-                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedUserName, Mode=TwoWay}"/>
+            <StackPanel Grid.Row="2" MaxWidth="600" MinWidth="200" VerticalAlignment="Center" Margin="10,0">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                    <Style TargetType="DatePicker">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                
+                <TextBox Header="Username" Text="{x:Bind ProfileViewModel.EditedUserName, Mode=TwoWay}"/>
 
-                <TextBlock Text="First Name" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
-                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedFirstName, Mode=TwoWay}"/>
+                <TextBox Header="Device Name" Text="{x:Bind ProfileViewModel.EditedDeviceName, Mode=TwoWay}"/>
 
-                <TextBlock Text="Last Name" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
-                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedLastName, Mode=TwoWay}"/>
+                <TextBox Header="First Name" Text="{x:Bind ProfileViewModel.EditedFirstName, Mode=TwoWay}"/>
 
-                <TextBlock Text="Email" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
-                <TextBox Margin="0,1,0,5" Text="{x:Bind ProfileViewModel.EditedEmail, Mode=TwoWay}"/>
+                <TextBox Header="Last Name" Text="{x:Bind ProfileViewModel.EditedLastName, Mode=TwoWay}"/>
 
-                <TextBlock Text="Password" Foreground="{ThemeResource NoticeMe_NormalTextColorBrush}"/>
-                <PasswordBox Margin="0,1,0,40" MaxLength="16"/>
+                <DatePicker Header="Birthday"/>
+
+                <TextBox Header="Email" Text="{x:Bind ProfileViewModel.EditedEmail, Mode=TwoWay}"/>
+
+                <PasswordBox Header="Password" MaxLength="16"/>
                 <!--Use this Event later: PasswordChanged="passwordBox_PasswordChanged"-->
 
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="Save" Click="{x:Bind ProfileViewModel.Save_EditProfilePage_ButtonClick}"/>
-                    <Button Content="Cancel" Click="{x:Bind ProfileViewModel.Close_EditProfilePage_ButtonClick}"/>
+                <StackPanel Margin="5" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="5" Content="Save" Click="{x:Bind ProfileViewModel.Save_EditProfilePage_ButtonClick}"/>
+                    <Button Margin="5" Content="Cancel" Click="{x:Bind ProfileViewModel.Close_EditProfilePage_ButtonClick}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

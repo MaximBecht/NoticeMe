@@ -14,64 +14,73 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Here comes our short summary!"/>
 
+        <ScrollViewer>
+            <Grid>
+                <TextBlock Text="Here comes our short summary!" Height="800"/>
 
-        <Grid x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Grid.Resources >
-                <Style TargetType="Border" >
-                    <Setter Property="Padding" Value="2,2,2,2" />
-                </Style>
-            </Grid.Resources>
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="64"/>
-                <ColumnDefinition Width="64"/>
-                <ColumnDefinition Width="64"/>
-                <ColumnDefinition Width="64"/>
-            </Grid.ColumnDefinitions>
+                <Grid x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <Grid.Resources >
+                        <Style TargetType="Border" >
+                            <Setter Property="Padding" Value="2,2,2,2" />
+                        </Style>
+                    </Grid.Resources>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="64"/>
-                <RowDefinition Height="64"/>
-            </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="64"/>
+                        <ColumnDefinition Width="64"/>
+                        <ColumnDefinition Width="64"/>
+                        <ColumnDefinition Width="64"/>
+                    </Grid.ColumnDefinitions>
 
-            <Border>
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.facebook.com/">
-                    <Image Source="{ThemeResource FacebookLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-            <Border Grid.Column="1">
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.instagram.com/">
-                    <Image Source="{ThemeResource InstagramLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-            <Border Grid.Column="2">
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://de.linkedin.com/">
-                    <Image Source="{ThemeResource LinkedInLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-            <Border Grid.Column="3">
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.reddit.com/">
-                    <Image Source="{ThemeResource RedditLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-            <Border Grid.Row="1">
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.tiktok.com/">
-                    <Image Source="{ThemeResource TiktokLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-            <Border Grid.Row="1" Grid.Column="1">
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://twitter.com/">
-                    <Image Source="{ThemeResource TwitterLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-            <Border Grid.Row="1" Grid.Column="2">
-                <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.youtube.com/">
-                    <Image Source="{ThemeResource YoutubeLogo}" Stretch="Uniform"/>
-                </HyperlinkButton>
-            </Border>
-        </Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="64"/>
+                        <RowDefinition Height="64"/>
+                    </Grid.RowDefinitions>
+
+                    <Border>
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.facebook.com/">
+                            <Image Source="{ThemeResource FacebookLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Column="1">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.instagram.com/">
+                            <Image Source="{ThemeResource InstagramLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Column="2">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://de.linkedin.com/">
+                            <Image Source="{ThemeResource LinkedInLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Column="3">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.reddit.com/">
+                            <Image Source="{ThemeResource RedditLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Row="1">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.tiktok.com/">
+                            <Image Source="{ThemeResource TiktokLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://twitter.com/">
+                            <Image Source="{ThemeResource TwitterLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="2">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.youtube.com/">
+                            <Image Source="{ThemeResource YoutubeLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="3">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://external-preview.redd.it/6NTdNcbcpPK9SfggG5nj216xCBxIYB8jPDLArxgSlv4.png?auto=webp&amp;s=259b538774bd14170916f1201f8f51c3b3fb1d25">
+                            <Image Source="{ThemeResource AppLogo}" Stretch="Uniform"/>
+                        </HyperlinkButton>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
 
         <StackPanel  Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" Padding="16">
