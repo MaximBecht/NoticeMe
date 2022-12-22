@@ -91,6 +91,9 @@
                                     <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
                                     <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
                                     <ImageSource x:Key="AppLogo">/Assets/Images/Logo_V1_white.svg</ImageSource>
+                                    <ImageSource x:Key="FirstPlaceLogo">/Assets/Images/icon_medal_first_place_white_48px.png</ImageSource>
+                                    <ImageSource x:Key="SecondPlaceLogo">/Assets/Images/icon_medal_second_place_white_48px.png</ImageSource>
+                                    <ImageSource x:Key="ThirdPlaceLogo">/Assets/Images/icon_medal_third_place_white_48px.png</ImageSource>
 
                                     <ImageSource x:Key="FacebookLogo">/Assets/Images/OtherBrands/facebook_logo_256.png</ImageSource>
                                     <ImageSource x:Key="InstagramLogo">/Assets/Images/OtherBrands/instagram_logo_256.png</ImageSource>
@@ -176,6 +179,9 @@
                                     <SolidColorBrush x:Key="HomePageNavigationButtonDefaultThemeBrush" Color="#6d6d6d"/>
                                     <SolidColorBrush x:Key="HomePageNavigationButtonHighlightThemeBrush" Color="{ThemeResource SystemAccentColor}"/>
                                     <ImageSource x:Key="AppLogo">/Assets/Images/Logo_V1.svg</ImageSource>
+                                    <ImageSource x:Key="FirstPlaceLogo">/Assets/Images/icon_medal_first_place_black_48px.png</ImageSource>
+                                    <ImageSource x:Key="SecondPlaceLogo">/Assets/Images/icon_medal_second_place_black_48px.png</ImageSource>
+                                    <ImageSource x:Key="ThirdPlaceLogo">/Assets/Images/icon_medal_third_place_black_48px.png</ImageSource>
 
                                     <ImageSource x:Key="FacebookLogo">/Assets/Images/OtherBrands/facebook_logo_256.png</ImageSource>
                                     <ImageSource x:Key="InstagramLogo">/Assets/Images/OtherBrands/instagram_logo_256.png</ImageSource>

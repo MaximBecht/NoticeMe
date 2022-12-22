@@ -29,6 +29,7 @@
     <_Globbed_Compile Remove="Data\ObjectSerializer.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\MainViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\ProfileViewModel.cs" />
+    <_Globbed_Compile Remove="Data\ViewModels\ScoreboardViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\SettingsViewModel.cs" />
     <_Globbed_Compile Remove="Data\ViewModels\UserViewModel.cs" />
     <_Globbed_Compile Remove="PageNavigator.cs" />
@@ -53,6 +54,7 @@
     <_Globbed_Content Remove="Assets\icons8_male_user_64px.png" />
     <_Globbed_Content Remove="Assets\icons8_settings_32px.png" />
     <_Globbed_Content Remove="Assets\icons8_settings_64px.png" />
+    <_Globbed_Content Remove="Assets\Images\Animated\icons8-medaille-erster-platz.gif" />
     <_Globbed_Content Remove="Assets\Images\icons8_home_48px.png" />
     <_Globbed_Content Remove="Assets\Images\icons8_leaderboard_32px.png" />
     <_Globbed_Content Remove="Assets\Images\icons8_settings_32px.png" />
@@ -75,6 +77,8 @@
     <_Globbed_Content Remove="Assets\Images\Logo_V1.svg" />
     <_Globbed_Content Remove="Assets\Images\Logo_V1_white.svg" />
     <_Globbed_Content Remove="Assets\Images\OtherBrands\facebook_logo_256.png" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\icons8-medal-first-place-black-48.png" />
+    <_Globbed_Content Remove="Assets\Images\OtherBrands\icons8-medal-first-place-white-48.png" />
     <_Globbed_Content Remove="Assets\Images\OtherBrands\instagram-logo-2433.svg" />
     <_Globbed_Content Remove="Assets\Images\OtherBrands\instagram_logo_256.png" />
     <_Globbed_Content Remove="Assets\Images\OtherBrands\linkedin-logo-2430.svg" />

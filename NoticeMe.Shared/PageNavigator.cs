@@ -19,6 +19,7 @@ namespace NoticeMe
         private static ProfileViewModel _profileViewModel = new();
         private static HomeViewModel _homeViewModel = new();
         private static SettingsViewModel _settingsViewModel = new();
+        private static ScoreboardViewModel _scoreboardViewModel = new();
 
 
         private static string _lastTitle;
@@ -28,6 +29,8 @@ namespace NoticeMe
         public static ProfileViewModel ProfileViewModel { get => _profileViewModel; set => _profileViewModel = value; }
         public static HomeViewModel HomeViewModel { get => _homeViewModel; set => _homeViewModel = value; }
         public static SettingsViewModel SettingsViewModel { get => _settingsViewModel; set => _settingsViewModel = value; }
+
+        public static ScoreboardViewModel ScoreboardViewModel { get => _scoreboardViewModel; set => _scoreboardViewModel = value; }
 
         public static void Init(Frame contentFrame, MainViewModel mainViewModel)
         {
@@ -113,7 +116,7 @@ namespace NoticeMe
         {
             switch (pageTitle)
             {
-                case "Scoreboard": return null;
+                case "Scoreboard": return ScoreboardViewModel;
                 case "Profile": return ProfileViewModel;
                 case "Home": return _mainViewModel;
                 case "Settings": return SettingsViewModel;

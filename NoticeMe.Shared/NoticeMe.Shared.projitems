@@ -23,6 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\HomeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\ScoreboardViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\SettingsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\ViewModels\UserViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageNavigator.cs" />
@@ -81,10 +82,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_medal_second_place_white_48px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_medal_second_place_black_48px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_medal_third_place_white_48px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_medal_third_place_black_48px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_trophy_white_48px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_trophy_black_48px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Logo_V1_white.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook_logo_2428.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\facebook_logo_256.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_medal_first_place_black_48px.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\icon_medal_first_place_white_48px.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\instagram-logo-2433.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\instagram_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\linkedin-logo-2430.svg" />
