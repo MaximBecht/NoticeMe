@@ -1,4 +1,5 @@
 ﻿using Microsoft.UI;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Imaging;
 using System;
@@ -10,13 +11,16 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Windows.ApplicationModel.Core;
 using Windows.Storage;
+using Windows.UI.Core;
 
 namespace NoticeMe.Data.DataModels
 {
     public class IoTDevice : INotifyPropertyChanged
     {
         private string _name = "default";
+        private BitmapImage _previewImage;
         private int _typingSpeed = 0;
         private int _keyStrokes = 0;
 
@@ -34,7 +38,18 @@ namespace NoticeMe.Data.DataModels
         }
         public string Id { get; set; }
         public string Type { get; set; }
-        public BitmapImage PreviewImage { get; set;}
+        public BitmapImage PreviewImage 
+        {
+            get => _previewImage;
+            set
+            {
+                if (_previewImage != value)
+                {
+                    _previewImage = value;
+                    OnPropertyChanged("PreviewImage");
+                }
+            }
+        }
 
         public Status Status { get; set; }
         public int TypingSpeed 
@@ -46,6 +61,8 @@ namespace NoticeMe.Data.DataModels
                 {
                     _typingSpeed = value;
                     OnPropertyChanged("TypingSpeed");
+
+                    Keystrokes += (int)(_typingSpeed / 60f);
                 }
             }
         }

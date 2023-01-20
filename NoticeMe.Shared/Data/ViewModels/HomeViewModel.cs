@@ -1,7 +1,10 @@
-﻿using NoticeMe.Data.DataModels;
+﻿using Microsoft.UI.Xaml;
+using NoticeMe.Data.DataModels;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Windows.UI.Core;
 
 namespace NoticeMe.Data.ViewModels
 {

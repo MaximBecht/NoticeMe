@@ -108,7 +108,15 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\twitter_logo_256.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\youtube-logo-2431.svg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\OtherBrands\youtube_logo_256.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_A.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_B.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_C.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_D.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_E.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_F.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_G.jpeg" />
     <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
+    <None Include="$(MSBuildThisFileDirectory)yolo.bat" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\de-DE\Resources.resw" />

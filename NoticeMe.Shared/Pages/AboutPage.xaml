@@ -17,9 +17,16 @@
 
         <ScrollViewer>
             <Grid>
-                <TextBlock Text="Here comes our short summary!" Height="800"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{ThemeResource TitleTextBlockStyle}" Text="NoticeMe"/>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" 
+                           Text="The most accurate real-time availability status.&#x0a;Based on audio recognition, NoticeMe aims to bring remote people closer together." />
 
-                <Grid x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Grid Grid.Row="2" x:Name="SocialMediaIcons" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                     <Grid.Resources >
                         <Style TargetType="Border" >
                             <Setter Property="Padding" Value="2,2,2,2" />
@@ -74,7 +81,7 @@
                         </HyperlinkButton>
                     </Border>
                     <Border Grid.Row="1" Grid.Column="3">
-                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://external-preview.redd.it/6NTdNcbcpPK9SfggG5nj216xCBxIYB8jPDLArxgSlv4.png?auto=webp&amp;s=259b538774bd14170916f1201f8f51c3b3fb1d25">
+                        <HyperlinkButton Width="48" Height="48" NavigateUri="https://www.hackster.io/noticemeiot/noticeme-390b65">
                             <Image Source="{ThemeResource AppLogo}" Stretch="Uniform"/>
                         </HyperlinkButton>
                     </Border>

@@ -91,6 +91,13 @@
     <_Globbed_Content Remove="Assets\Images\OtherBrands\twitter_logo_256.png" />
     <_Globbed_Content Remove="Assets\Images\OtherBrands\youtube-logo-2431.svg" />
     <_Globbed_Content Remove="Assets\Images\OtherBrands\youtube_logo_256.png" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_A.jpeg" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_B.jpeg" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_C.jpeg" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_D.jpeg" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_E.jpeg" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_F.jpeg" />
+    <_Globbed_Content Remove="Assets\Images\TestPersons\person_G.jpeg" />
     <_Globbed_Content Remove="Assets\Status\afk.txt" />
     <_Globbed_Content Remove="Assets\Status\offline.txt" />
     <_Globbed_Content Remove="Assets\Status\online.txt" />

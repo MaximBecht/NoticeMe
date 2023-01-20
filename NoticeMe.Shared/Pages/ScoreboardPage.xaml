@@ -11,172 +11,175 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Pivot Title="Boards">
-            <PivotItem Header="Keystrokes" FontSize="16">
-                <Grid Margin="0,10,0,10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="170"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="500"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+        <ScrollViewer>
+            <Pivot Title="Boards">
+                <Pivot.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontSize="16"/>
+                    </DataTemplate>
+                </Pivot.HeaderTemplate>
+                <PivotItem Header="Keystrokes" FontSize="8">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="170"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="1" Text="Most Keystrokes of all time" Style="{ThemeResource HeaderTextBlockStyle}" FontSize="18" Margin="20,40,20,10"/>
+                        <TextBlock Grid.Column="1" Text="Most Keystrokes of all time" Style="{ThemeResource HeaderTextBlockStyle}" FontSize="18" Margin="20,40,20,10"/>
 
-                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-                        <!--2nd place-->
-                        <StackPanel VerticalAlignment="Center">
-                            <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
-                            <TextBlock Text="7.443.245.431" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <Image Width="32" Height="32" Source="{ThemeResource SecondPlaceLogo}"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                            <!--2nd place-->
+                            <StackPanel VerticalAlignment="Center">
+                                <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
+                                <TextBlock Text="7.443.245.431" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <Image Width="32" Height="32" Source="{ThemeResource SecondPlaceLogo}"/>
+                            </StackPanel>
+                            <!--1st place-->
+                            <StackPanel Margin="10,0">
+                                <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="64"/>
+                                <TextBlock Text="93.433.123.132" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <Image Width="32" Height="32" Source="{ThemeResource FirstPlaceLogo}"/>
+                            </StackPanel>
+                            <!--3rd place-->
+                            <StackPanel VerticalAlignment="Bottom">
+                                <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
+                                <TextBlock Text="23.781.293" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <Image Width="32" Height="32" Source="{ThemeResource ThirdPlaceLogo}"/>
+                            </StackPanel>
                         </StackPanel>
-                        <!--1st place-->
-                        <StackPanel Margin="10,0">
-                            <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="64"/>
-                            <TextBlock Text="93.433.123.132" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <Image Width="32" Height="32" Source="{ThemeResource FirstPlaceLogo}"/>
-                        </StackPanel>
-                        <!--3rd place-->
-                        <StackPanel VerticalAlignment="Bottom">
-                            <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
-                            <TextBlock Text="23.781.293" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <Image Width="32" Height="32" Source="{ThemeResource ThirdPlaceLogo}"/>
-                        </StackPanel>
-                    </StackPanel>
 
-                    <ListView Grid.Row="2" Grid.Column="1" x:Name="MostKeystrokesList_OAT"
+                        <ListView Grid.Row="2" Grid.Column="1" x:Name="MostKeystrokesList_OAT"
                         HorizontalAlignment="Center"
                         BorderThickness="1"
-                        ItemsSource="{x:Bind HomeViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                        ItemsSource="{x:Bind HomeViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="400">
 
-                        <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="m:IoTDevice">
-                                <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition MinWidth="400"/>
-                                    </Grid.ColumnDefinitions>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="m:IoTDevice">
+                                    <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <PersonPicture Grid.Column="0" Height="48" ProfilePicture="{x:Bind PreviewImage}" Margin="5,0,5,0" HorizontalAlignment="Left" />
 
+                                        <Grid Grid.Column="1" Margin="12,0,0,0" >
+                                            <StackPanel Orientation="Vertical"  HorizontalAlignment="Left">
+                                                <TextBlock Text="#1" FontSize="12" FontWeight="Bold" 
+                                                    Style="{ThemeResource BaseTextBlockStyle}"
+                                                    LineHeight="20" Margin="0,0,6,0"/>
+                                                <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="12" FontWeight="SemiBold" 
+                                                    Style="{ThemeResource BaseTextBlockStyle}"
+                                                    LineHeight="20" Margin="0,0,6,0"/>
+                                            </StackPanel>
 
-                                    <PersonPicture Height="48" ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Margin="20,0,20,0"/>
-
-                                    <Grid Grid.Column="1" Margin="12,0,0,0" >
-                                        <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="#1" FontSize="12" FontWeight="Bold" 
-                                           Style="{ThemeResource BaseTextBlockStyle}"
-                                           LineHeight="20" Margin="0,0,6,0"/>
-                                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="12" FontWeight="SemiBold" 
-                                           Style="{ThemeResource BaseTextBlockStyle}"
-                                           LineHeight="20" Margin="0,0,6,0"/>
-                                        </StackPanel>
-
-                                        <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" FontSize="14" 
-                                       MinWidth="100" MaxWidth="200" TextAlignment="Right" 
-                                       HorizontalAlignment="Right" VerticalAlignment="Center"
-                                       Margin="0,0,20,0"
-                                       Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                            <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" FontSize="14" 
+                                                MinWidth="100" MaxWidth="200" TextAlignment="Right" 
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                Margin="0,0,20,0"
+                                                Style="{ThemeResource CaptionTextBlockStyle}" />
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Typing Speed" FontSize="16">
-                <Grid Margin="0,10,0,10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="170"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="500"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Typing Speed" FontSize="16">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="170"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="1" Text="Highest typing speed of all time" Style="{ThemeResource HeaderTextBlockStyle}" FontSize="18" Margin="20,40,20,10"/>
+                        <TextBlock Grid.Column="1" Text="Highest typing speed of all time" Style="{ThemeResource HeaderTextBlockStyle}" FontSize="18" Margin="20,40,20,10"/>
 
-                    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
 
-                        <!--2nd place-->
-                        <StackPanel VerticalAlignment="Center">
-                            <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
-                            <TextBlock Text="7.443.245.431" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <Image Width="32" Height="32" Source="{ThemeResource SecondPlaceLogo}"/>
+                            <!--2nd place-->
+                            <StackPanel VerticalAlignment="Center">
+                                <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
+                                <TextBlock Text="7.443.245.431" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <Image Width="32" Height="32" Source="{ThemeResource SecondPlaceLogo}"/>
+                            </StackPanel>
+                            <!--1st place-->
+                            <StackPanel Margin="10,0">
+                                <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="64"/>
+                                <TextBlock Text="93.433.123.132" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <Image Width="32" Height="32" Source="{ThemeResource FirstPlaceLogo}"/>
+                            </StackPanel>
+                            <!--3rd place-->
+                            <StackPanel VerticalAlignment="Bottom">
+                                <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
+                                <TextBlock Text="23.781.293" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
+                                <Image Width="32" Height="32" Source="{ThemeResource ThirdPlaceLogo}"/>
+                            </StackPanel>
+
                         </StackPanel>
-                        <!--1st place-->
-                        <StackPanel Margin="10,0">
-                            <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="64"/>
-                            <TextBlock Text="93.433.123.132" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <Image Width="32" Height="32" Source="{ThemeResource FirstPlaceLogo}"/>
-                        </StackPanel>
-                        <!--3rd place-->
-                        <StackPanel VerticalAlignment="Bottom">
-                            <PersonPicture ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Height="48"/>
-                            <TextBlock Text="23.781.293" FontSize="12" FontWeight="Bold" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <TextBlock Text="Bene" FontSize="12" MinWidth="100" MaxWidth="200" TextAlignment="Center"/>
-                            <Image Width="32" Height="32" Source="{ThemeResource ThirdPlaceLogo}"/>
-                        </StackPanel>
 
-                    </StackPanel>
-
-                    <ListView Grid.Column="1" Grid.Row="2" x:Name="HighestTypingSpeedList_OAT"
+                        <ListView Grid.Column="1" Grid.Row="2" x:Name="HighestTypingSpeedList_OAT"
                         HorizontalAlignment="Center"
                         BorderThickness="1"
-                        ItemsSource="{x:Bind HomeViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                        ItemsSource="{x:Bind HomeViewModel.IoTDevices, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="400">
 
-                        <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="m:IoTDevice">
-                                <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition MinWidth="400"/>
-                                    </Grid.ColumnDefinitions>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="m:IoTDevice">
+                                    <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind Id}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
 
 
-                                    <PersonPicture Height="48" ProfilePicture="ms-appx:///Assets/Images/icon_particle_photon_600px.jpg" Margin="20,0,20,0"/>
+                                        <PersonPicture Grid.Column="0" Height="48" ProfilePicture="{x:Bind PreviewImage, Mode=OneWay}" Margin="5,0,5,0" HorizontalAlignment="Left" />
 
-                                    <Grid Grid.Column="1" Margin="12,0,0,0" >
-                                        <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="#1" FontSize="12" FontWeight="Bold" 
+                                        <Grid Grid.Column="1" Margin="12,0,0,0" >
+                                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                                <TextBlock Text="#1" FontSize="12" FontWeight="Bold" 
                                            Style="{ThemeResource BaseTextBlockStyle}"
                                            LineHeight="20" Margin="0,0,6,0"/>
-                                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="12" FontWeight="SemiBold" 
+                                                <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="12" FontWeight="SemiBold" 
                                            Style="{ThemeResource BaseTextBlockStyle}"
                                            LineHeight="20" Margin="0,0,6,0"/>
-                                        </StackPanel>
+                                            </StackPanel>
 
-                                        <TextBlock Text="{x:Bind Keystrokes, Mode=OneWay}" FontSize="14" 
-                                       MinWidth="100" MaxWidth="200" TextAlignment="Right" 
-                                       HorizontalAlignment="Right" VerticalAlignment="Center"
-                                       Margin="0,0,20,0"
-                                       Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                            <TextBlock Text="{x:Bind TypingSpeed, Mode=OneWay}" FontSize="14" 
+                                                MinWidth="100" MaxWidth="200" TextAlignment="Right" 
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                Margin="0,0,20,0"
+                                                Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Rages" FontSize="16">
-                <TextBlock Text="flagged emails go here." />
-            </PivotItem>
-            <PivotItem Header="Region" FontSize="16">
-                <TextBlock Text="regional (EU/NA/etc...) highscores go here." />
-            </PivotItem>
-            <PivotItem Header="Global" FontSize="16">
-                <TextBlock Text="global highscores go here." />
-            </PivotItem>
-        </Pivot>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Region" FontSize="16">
+                    <TextBlock Text="regional (EU/NA/etc...) highscores go here." />
+                </PivotItem>
+                <PivotItem Header="Global" FontSize="16">
+                    <TextBlock Text="global highscores go here." />
+                </PivotItem>
+            </Pivot>
+        </ScrollViewer>
     </Grid>
 </Page>
