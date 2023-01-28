@@ -1,1 +1,0 @@
-﻿curl https://api.particle.io/v1/devices/events?access_token=491b4b1c5d626497780cd786fdd49121ab6c4ff0

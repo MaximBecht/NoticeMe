@@ -18,7 +18,8 @@
             <ComboBox x:Uid="LanguageComboBox" x:Name="LanguageComboBox" Header="Language" Description="" MinWidth="250" MaxDropDownHeight="400" SelectedItem="{x:Bind SettingsViewModel.SelectedLanguageIndex, Mode=OneWay}" DropDownClosed="LanguageDropDown_Closed">
                 <x:String>English</x:String>
                 <x:String>Deutsch</x:String>
-                <!--<x:String>Español</x:String>
+                <!--to be implemented:
+                <x:String>Español</x:String>
                 <x:String>Français</x:String>
                 <x:String>Italiano</x:String>
                 <x:String>简体中文</x:String>
@@ -33,6 +34,7 @@
                 <TextBlock x:Uid="ThemeComboBox_SystemDefault" Text="System default"/>
             </ComboBox>
 
+            <!--to be implemented (functionality of font styles as ressources):-->
             <ComboBox x:Uid="FontComboBox" Header="Font" Description="General font used. Requires app restart to apply." MinWidth="250" MaxDropDownHeight="400">
                 <x:String>Akzidenz Grotesk</x:String>
                 <x:String>Helvetica</x:String>

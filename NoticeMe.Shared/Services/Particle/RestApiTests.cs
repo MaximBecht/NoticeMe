@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Mime;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.Media.Protection.PlayReady;
 
 namespace NoticeMe.Services.Particle
 {
@@ -49,7 +44,7 @@ namespace NoticeMe.Services.Particle
 
         public void RequestStatus()
         {
-            Debug.WriteLine("YUIWGQAYIUGDUIYAWHGDUIOAHWUDIAHUIWFGAIHWFGHAUIWHFUAWHFUOIAWHFuioAWHf");
+            Debug.WriteLine("RequestStatus called, starting request");
             //// Start the child process.
             //Process p = new Process();
             //// Redirect the output stream of the child process.

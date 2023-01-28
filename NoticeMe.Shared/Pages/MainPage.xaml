@@ -11,8 +11,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{x:Bind MainViewModel}">
 
-    
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="56"/>
@@ -24,10 +23,10 @@
         <!--TopBar: can later be used, if needed-->
         <Grid x:Name="AppTopBar" Grid.Row="0" Background="{ThemeResource AppBarBackgroundThemeBrush}">
             <Grid.ColumnDefinitions>
-                
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                
+
             </Grid.RowDefinitions>
 
             <TextBlock Margin="72, 16, 0, 0" FontSize="16" Text="{x:Bind MainViewModel.ActivePageTitle, Mode=OneWay}"/>

@@ -1,21 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.UI;
-using Microsoft.UI.Windowing;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
-using NoticeMe.Data;
 using NoticeMe.Pages;
 using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.ApplicationModel.Core;
 using Windows.Globalization;
 using Windows.Storage;
-using Windows.UI.Popups;
-using Windows.UI.ViewManagement;
 
 namespace NoticeMe
 {

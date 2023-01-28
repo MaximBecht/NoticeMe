@@ -1,15 +1,7 @@
 ﻿using Microsoft.UI.Xaml.Controls;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using NoticeMe.Data.ViewModels;
-using NoticeMe.Data.DataModels;
 using Microsoft.UI.Xaml.Navigation;
+using NoticeMe.Data.DataModels;
+using NoticeMe.Data.ViewModels;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 

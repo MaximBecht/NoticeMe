@@ -8,6 +8,7 @@
     </ResourceDictionary.MergedDictionaries>
 
 
+    <!--Old style of using ThemeDictionaries in a customized way => deprecated!-->
     <!--<ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
             <SolidColorBrush x:Key="TargetBackground" Color="Red"/>

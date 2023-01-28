@@ -16,21 +16,21 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            
+
             <Button Grid.Row="0" 
                     HorizontalAlignment="Left" VerticalAlignment="Center"
                     Height="32" Width="64"
                     Margin="10,0,0,0"
                     Background="{ThemeResource SystemAccentColorDark1}"
                     Click="{x:Bind ProfileViewModel.Close_EditProfilePage_ButtonClick}">
-                
+
                 <BitmapIcon UriSource="ms-appx:///Assets/Images/icon_material_left_64px.png" 
                             Foreground="{ThemeResource SystemBaseHighColor}"
                             VerticalAlignment="Center" HorizontalAlignment="Center"
                             Height="24" Width="24"/>
             </Button>
 
-            
+
             <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <PersonPicture ProfilePicture="{x:Bind ProfileViewModel.EditedProfileImage, Mode=OneWay}"
                                DisplayName="{x:Bind ProfileViewModel.EditedDisplayName, Mode=OneWay}"
@@ -57,7 +57,7 @@
                         <Setter Property="Margin" Value="0,10,0,0"/>
                     </Style>
                 </StackPanel.Resources>
-                
+
                 <TextBox Header="Username" Text="{x:Bind ProfileViewModel.EditedUserName, Mode=TwoWay}"/>
 
                 <TextBox Header="Device Name" Text="{x:Bind ProfileViewModel.EditedDeviceName, Mode=TwoWay}"/>

@@ -116,7 +116,6 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_F.jpeg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\TestPersons\person_G.jpeg" />
     <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
-    <None Include="$(MSBuildThisFileDirectory)yolo.bat" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\de-DE\Resources.resw" />

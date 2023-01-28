@@ -1,22 +1,12 @@
 ﻿using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Xaml.Navigation;
+using NoticeMe.Data.DataModels;
+using NoticeMe.Data.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using NoticeMe.Data.DataModels;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using NoticeMe.Data.ViewModels;
-using Microsoft.UI.Xaml.Navigation;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Core;
-using Windows.UI.Core;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Media.Imaging;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
@@ -61,13 +51,7 @@ namespace NoticeMe.Pages
             HomeViewModel.IoTDevices.Add(new IoTDevice("Boromir", "690-069-690", "Smart Lamp", new BitmapImage(new Uri("ms-appx:///Assets/Images/TestPersons/person_D.jpeg"))));
             HomeViewModel.IoTDevices.Add(new IoTDevice("Peter", "420-420-420", "Keyboard Detector", new BitmapImage(new Uri("ms-appx:///Assets/Images/TestPersons/person_E.jpeg"))));
             HomeViewModel.IoTDevices.Add(new IoTDevice("Kevin", "777-777-777", "Mouse Detector", new BitmapImage(new Uri("ms-appx:///Assets/Images/TestPersons/person_F.jpeg"))));
-
             HomeViewModel.IoTDevices.Add(new IoTDevice("Leander", "123-456-789", "Keyboard Detector", new BitmapImage(new Uri("ms-appx:///Assets/Images/TestPersons/person_G.jpeg"))));
-            //HomeViewModel.IoTDevices.Add(new IoTDevice("Test", "666-666-666", "Keyboard Detector Pro", null));
-            //HomeViewModel.IoTDevices.Add(new IoTDevice("Hello World", "000-111-222", "Keyboard Detector", null));
-            //HomeViewModel.IoTDevices.Add(new IoTDevice("Wow", "690-069-690", "Smart Lamp", null));
-            //HomeViewModel.IoTDevices.Add(new IoTDevice("LOL", "420-420-420", "Keyboard Detector", null));
-            //HomeViewModel.IoTDevices.Add(new IoTDevice("Smash It", "777-777-777", "Mouse Detector", null));
 
             HomeViewModel.IoTDevices[0].Status.Category = StatusCategory.Online;
             HomeViewModel.IoTDevices[1].Status.Category = StatusCategory.Afk;

@@ -233,7 +233,7 @@ namespace NoticeMe.Data.ViewModels
 
         public ProfileViewModel()
         {
-            //LoadProfileImage();
+            // LoadProfileImage() -> currently not in use, going from xml to other, more embedded and saver data saving and loading solution
         }
 
         public void OpenEditPageButton(object sender, RoutedEventArgs e)

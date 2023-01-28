@@ -1,18 +1,6 @@
-﻿using Microsoft.UI.Xaml;
-using NoticeMe.Data.DataModels;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Data.SqlTypes;
-using System.Diagnostics;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Windows.Input;
-using System.Xml.Serialization;
 using Windows.ApplicationModel.Resources;
 
 namespace NoticeMe.Data.ViewModels

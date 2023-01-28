@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 
 namespace NoticeMe.Data.DataModels
 {
+    // Used only for saving/loading into/from .xml file
     [XmlType("UserData")]
     public class UserData
     {

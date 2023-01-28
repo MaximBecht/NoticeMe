@@ -1,13 +1,5 @@
-﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Documents;
-using NoticeMe.Pages;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using Windows.Globalization;
 using Windows.Storage;
 
@@ -73,22 +65,6 @@ namespace NoticeMe.Data.ViewModels
             }
         }
 
-        //public int DisplaySelectedLanguage
-        //{
-        //    get
-        //    {
-        //        return SelectedAppThemeIndex;
-        //    }
-        //}
-
-        //public int DisplaySelectedTheme
-        //{
-        //    get
-        //    {
-        //        return SelectedAppThemeIndex;
-        //    }
-        //}
-
 
         public SettingsViewModel() 
         {
@@ -110,7 +86,6 @@ namespace NoticeMe.Data.ViewModels
                 SelectedLanguageIndex = 0;
             }
         }
-
 
         private void ChangeLanguage(int requestedLanguageIndex)
         {
